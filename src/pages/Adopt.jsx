@@ -25,8 +25,6 @@ export default function Adopt() {
     return matchSpecies && matchSize && matchSearch;
   });
 
-  const selectedPet = selectedPetId ? pets.find(p => p.id === selectedPetId) : null;
-
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Header */}
