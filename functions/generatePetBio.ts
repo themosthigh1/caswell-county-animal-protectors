@@ -39,7 +39,7 @@ Write 2-3 short paragraphs that will make potential adopters fall in love. Use a
 
     const apiKey = Deno.env.get('GEMINI_API_KEY');
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,12 +53,11 @@ Write 2-3 short paragraphs that will make potential adopters fall in love. Use a
     const data = await response.json();
 
     if (!response.ok) {
-      return Response.json({ error: data?.error?.message || 'Gemini API error', detail: data }, { status: 500 });
+      return Response.json({ error: data?.error?.message || 'Gemini API error' }, { status: 500 });
     }
 
     const bio = data.candidates?.[0]?.content?.parts?.[0]?.text;
-
-    if (!bio) return Response.json({ error: 'No bio returned', detail: data }, { status: 500 });
+    if (!bio) return Response.json({ error: 'No bio returned from Gemini' }, { status: 500 });
 
     return Response.json({ bio });
   } catch (error) {
