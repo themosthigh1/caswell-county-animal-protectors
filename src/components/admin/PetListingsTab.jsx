@@ -307,6 +307,13 @@ export default function PetListingsTab() {
                         >
                           {pet.featured ? <Star className="w-4 h-4 fill-current" /> : <StarOff className="w-4 h-4" />}
                         </button>
+                        <Link
+                          to={createPageUrl(`PetDetail?id=${pet.id}`)}
+                          className="p-1.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors flex items-center"
+                          title="View detail page"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </Link>
                         <button
                           onClick={() => { setEditPet(pet); setShowForm(true); }}
                           className="p-1.5 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
