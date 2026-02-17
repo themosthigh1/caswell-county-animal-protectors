@@ -54,6 +54,7 @@ import Services from './pages/Services';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
+import PetDetail from './pages/PetDetail';
 import __Layout from './Layout.jsx';
 
 
@@ -65,6 +66,7 @@ export const PAGES = {
     "Donate": Donate,
     "Contact": Contact,
     "Admin": Admin,
+    "PetDetail": PetDetail,
 }
 
 export const pagesConfig = {
