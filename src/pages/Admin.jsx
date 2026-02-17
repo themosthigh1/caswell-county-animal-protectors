@@ -63,40 +63,8 @@ export default function Admin() {
         </div>
 
         {tab === 'pets' && <PetListingsTab />}
-
-        {tab === 'messages' && (
-          <div>
-            <h2 className="text-xl font-black text-gray-900 mb-5">Messages ({messages.length})</h2>
-            {loadingMsgs ? <div className="text-center py-12 text-gray-400">Loading…</div> : (
-              <div className="space-y-3">
-                {messages.map(msg => (
-                  <div key={msg.id} className={`bg-white rounded-xl p-5 shadow-sm ring-1 ${msg.status === 'new' ? 'ring-green-200 border-l-4 border-l-green-500' : 'ring-gray-100'}`}>
-                    <div className="flex justify-between items-start gap-4 flex-wrap">
-                      <div>
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-bold text-gray-800">{msg.name}</span>
-                          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{msg.inquiry_type?.replace('_', ' ')}</span>
-                          {msg.status === 'new' && <span className="text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">NEW</span>}
-                        </div>
-                        <p className="text-sm text-gray-500">{msg.email} {msg.phone && `• ${msg.phone}`}</p>
-                        {msg.subject && <p className="text-sm font-semibold text-gray-700 mt-1">{msg.subject}</p>}
-                        <p className="text-sm text-gray-600 mt-1 leading-relaxed">{msg.message}</p>
-                      </div>
-                      <div className="flex gap-2">
-                        {msg.status === 'new' && (
-                          <button onClick={() => updateMsg.mutate({ id: msg.id, data: { status: 'read' } })} className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-green-50 text-green-700 hover:bg-green-100 rounded-full transition-colors">
-                            <CheckCircle className="w-3.5 h-3.5" /> Mark Read
-                          </button>
-                        )}
-                        <a href={`mailto:${msg.email}`} className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-full transition-colors">Reply</a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+        {tab === 'messages' && <MessagesTab />}
+        {tab === 'lostfound' && <LostFoundTab />}
 
         {tab === 'donations' && (
           <div>
@@ -111,34 +79,6 @@ export default function Admin() {
                     <div className="text-xs text-gray-400 mt-0.5">{d.purpose?.replace('_', ' ')} {d.message && `• "${d.message}"`}</div>
                   </div>
                   <span className="text-xl font-black text-green-700">${d.amount?.toLocaleString()}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {tab === 'lostfound' && (
-          <div>
-            <h2 className="text-xl font-black text-gray-900 mb-5">Lost & Found Reports ({reports.length})</h2>
-            <div className="space-y-3">
-              {reports.map(r => (
-                <div key={r.id} className={`bg-white rounded-xl p-4 shadow-sm ring-1 flex justify-between items-start gap-4 flex-wrap ${r.type === 'lost' ? 'ring-rose-100' : 'ring-amber-100'}`}>
-                  <div className="flex gap-4">
-                    {r.photo_url && <img src={r.photo_url} alt="" className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />}
-                    <div>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full text-white ${r.type === 'lost' ? 'bg-rose-600' : 'bg-amber-600'}`}>{r.type?.toUpperCase()}</span>
-                        <span className="font-bold text-gray-800">{r.pet_name || `${r.species} (unnamed)`}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${r.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>{r.status}</span>
-                      </div>
-                      <p className="text-sm text-gray-600 mt-1">{r.location} • {r.contact_name} • {r.contact_phone}</p>
-                    </div>
-                  </div>
-                  {r.status === 'active' && (
-                    <button onClick={() => resolveReport.mutate(r.id)} className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-green-50 text-green-700 hover:bg-green-100 rounded-full transition-colors">
-                      <CheckCircle className="w-3.5 h-3.5" /> Mark Resolved
-                    </button>
-                  )}
                 </div>
               ))}
             </div>
