@@ -50,6 +50,10 @@
 import Home from './pages/Home';
 import Adopt from './pages/Adopt';
 import LostFound from './pages/LostFound';
+import Services from './pages/Services';
+import Donate from './pages/Donate';
+import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 import __Layout from './Layout.jsx';
 
 
@@ -57,6 +61,10 @@ export const PAGES = {
     "Home": Home,
     "Adopt": Adopt,
     "LostFound": LostFound,
+    "Services": Services,
+    "Donate": Donate,
+    "Contact": Contact,
+    "Admin": Admin,
 }
 
 export const pagesConfig = {
