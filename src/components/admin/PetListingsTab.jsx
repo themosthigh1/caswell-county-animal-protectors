@@ -221,7 +221,11 @@ export default function PetListingsTab() {
               <StarOff className="w-3.5 h-3.5" /> Unfeature All
             </button>
             <button
-              onClick={() => { if (confirm(`Delete ${selected.size} pet${selected.size > 1 ? 's' : ''}? This cannot be undone.`)) bulkDelete.mutate(); }}
+              onClick={() => setConfirmModal({
+                title: `Delete ${selected.size} pet${selected.size > 1 ? 's' : ''}?`,
+                message: `This will permanently remove ${selected.size} pet record${selected.size > 1 ? 's' : ''} from the system. This action cannot be undone.`,
+                onConfirm: () => bulkDelete.mutate(),
+              })}
               disabled={isBulkLoading}
               className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 border border-rose-200 text-rose-600 font-semibold text-xs rounded-full hover:bg-rose-100 transition-colors">
               <Trash2 className="w-3.5 h-3.5" /> Delete
