@@ -312,10 +312,14 @@ export default function PetListingsTab() {
                           <Pencil className="w-4 h-4" />
                         </button>
                         <button
-                          onClick={() => { if (confirm(`Delete ${pet.name}?`)) deletePet.mutate(pet.id); }}
-                          className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                        onClick={() => setConfirmModal({
+                          title: `Delete ${pet.name}?`,
+                          message: `This will permanently remove ${pet.name} from the shelter listings. This action cannot be undone.`,
+                          onConfirm: () => deletePet.mutate(pet.id),
+                        })}
+                        className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
                         >
-                          <Trash2 className="w-4 h-4" />
+                        <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
                     </div>
