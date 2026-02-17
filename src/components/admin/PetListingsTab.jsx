@@ -6,6 +6,7 @@ import {
   CheckSquare, Square, ChevronDown, X
 } from 'lucide-react';
 import PetForm from './PetForm';
+import ConfirmModal from './ConfirmModal';
 
 const SPECIES_OPTIONS = ['all', 'dog', 'cat', 'rabbit', 'bird', 'other'];
 const STATUS_OPTIONS = ['all', 'available', 'pending', 'adopted', 'foster'];
