@@ -72,43 +72,7 @@ export default function Admin() {
           ))}
         </div>
 
-        {tab === 'pets' && (
-          <div>
-            <div className="flex justify-between items-center mb-5">
-              <h2 className="text-xl font-black text-gray-900">Pet Listings ({pets.length})</h2>
-              <button onClick={() => { setEditPet(null); setShowPetForm(true); }} className="flex items-center gap-2 bg-green-700 hover:bg-green-600 text-white font-bold px-5 py-2.5 rounded-full text-sm transition-colors">
-                <Plus className="w-4 h-4" /> Add Pet
-              </button>
-            </div>
-            {loadingPets ? <div className="text-center py-12 text-gray-400">Loading…</div> : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {pets.map(pet => (
-                  <div key={pet.id} className="bg-white rounded-xl overflow-hidden shadow-sm ring-1 ring-gray-100">
-                    <div className="relative">
-                      <img src={pet.photo_url || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=60'} alt={pet.name} className="w-full h-36 object-cover" />
-                      <div className={`absolute top-2 right-2 px-2 py-0.5 rounded-full text-xs font-bold text-white ${pet.status === 'available' ? 'bg-green-600' : pet.status === 'adopted' ? 'bg-gray-500' : 'bg-amber-500'}`}>{pet.status}</div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h3 className="font-bold text-gray-800">{pet.name}</h3>
-                          <p className="text-xs text-gray-500">{pet.breed || pet.species} • {pet.sex}</p>
-                        </div>
-                        <div className="flex gap-1.5">
-                          <button onClick={() => toggleFeatured.mutate({ id: pet.id, featured: !pet.featured })} className={`p-1.5 rounded-lg transition-colors ${pet.featured ? 'text-amber-500 bg-amber-50' : 'text-gray-300 hover:text-amber-400'}`} title="Toggle featured">
-                            {pet.featured ? <Star className="w-4 h-4 fill-current" /> : <StarOff className="w-4 h-4" />}
-                          </button>
-                          <button onClick={() => { setEditPet(pet); setShowPetForm(true); }} className="p-1.5 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"><Pencil className="w-4 h-4" /></button>
-                          <button onClick={() => { if (confirm(`Delete ${pet.name}?`)) deletePet.mutate(pet.id); }} className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"><Trash2 className="w-4 h-4" /></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+        {tab === 'pets' && <PetListingsTab />}
 
         {tab === 'messages' && (
           <div>
