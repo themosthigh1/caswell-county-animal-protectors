@@ -19,7 +19,7 @@ export default function PetCard({ pet }) {
 
   return (
     <Link
-      to={createPageUrl(`Adopt?pet=${pet.id}`)}
+      to={createPageUrl(`PetDetail?id=${pet.id}`)}
       className="group bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block"
     >
       <div className="relative overflow-hidden h-56">
