@@ -31,11 +31,6 @@ export default function Admin() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-lf'] }),
   });
 
-  const toggleFeatured = useMutation({
-    mutationFn: ({ id, featured }) => base44.entities.Pet.update(id, { featured }),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-pets'] }),
-  });
-
   if (!user || user.role !== 'admin') {
     return <div className="min-h-screen flex items-center justify-center text-gray-500">Access denied. Admins only.</div>;
   }
