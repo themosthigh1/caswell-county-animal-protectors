@@ -12,21 +12,29 @@ export default function PetForm({ pet, onClose, onSaved }) {
   });
   const [photo, setPhoto] = useState(null);
   const [generatingBio, setGeneratingBio] = useState(false);
+  const [bioError, setBioError] = useState('');
   const queryClient = useQueryClient();
 
   const handleGenerateBio = async () => {
     setGeneratingBio(true);
-    const res = await base44.functions.invoke('generatePetBio', {
-      name: form.name, species: form.species, breed: form.breed,
-      age_years: form.age_years, age_months: form.age_months, sex: form.sex,
-      size: form.size, color: form.color, temperament: form.temperament,
-      good_with_kids: form.good_with_kids, good_with_dogs: form.good_with_dogs,
-      good_with_cats: form.good_with_cats, vaccinated: form.vaccinated,
-      spayed_neutered: form.spayed_neutered, microchipped: form.microchipped,
-      special_needs: form.special_needs, special_needs_description: form.special_needs_description,
-    });
-    if (res.data?.bio) set('description', res.data.bio);
-    setGeneratingBio(false);
+    setBioError('');
+    try {
+      const res = await base44.functions.invoke('generatePetBio', {
+        name: form.name, species: form.species, breed: form.breed,
+        age_years: form.age_years, age_months: form.age_months, sex: form.sex,
+        size: form.size, color: form.color, temperament: form.temperament,
+        good_with_kids: form.good_with_kids, good_with_dogs: form.good_with_dogs,
+        good_with_cats: form.good_with_cats, vaccinated: form.vaccinated,
+        spayed_neutered: form.spayed_neutered, microchipped: form.microchipped,
+        special_needs: form.special_needs, special_needs_description: form.special_needs_description,
+      });
+      if (res.data?.bio) set('description', res.data.bio);
+      else setBioError(res.data?.error || 'Failed to generate bio. Please try again.');
+    } catch (err) {
+      setBioError('AI generation failed. Your Gemini API quota may be exceeded — please try again later.');
+    } finally {
+      setGeneratingBio(false);
+    }
   };
 
   const mutation = useMutation({
