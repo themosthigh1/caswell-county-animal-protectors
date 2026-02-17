@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { X } from 'lucide-react';
+import { X, Sparkles } from 'lucide-react';
 
 export default function PetForm({ pet, onClose, onSaved }) {
   const [form, setForm] = useState(pet || {
