@@ -21,11 +21,6 @@ export default function Admin() {
   const { data: donations = [] } = useQuery({ queryKey: ['admin-donations'], queryFn: () => base44.entities.Donation.list('-created_date', 100) });
   const { data: reports = [] } = useQuery({ queryKey: ['admin-lf'], queryFn: () => base44.entities.LostFoundReport.list('-created_date', 100) });
 
-  const deletePet = useMutation({
-    mutationFn: (id) => base44.entities.Pet.delete(id),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-pets'] }),
-  });
-
   const updateMsg = useMutation({
     mutationFn: ({ id, data }) => base44.entities.ContactMessage.update(id, data),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-messages'] }),
