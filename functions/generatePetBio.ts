@@ -51,9 +51,14 @@ Write 2-3 short paragraphs that will make potential adopters fall in love. Use a
     );
 
     const data = await response.json();
+
+    if (!response.ok) {
+      return Response.json({ error: data?.error?.message || 'Gemini API error', detail: data }, { status: 500 });
+    }
+
     const bio = data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    if (!bio) return Response.json({ error: 'Failed to generate bio' }, { status: 500 });
+    if (!bio) return Response.json({ error: 'No bio returned', detail: data }, { status: 500 });
 
     return Response.json({ bio });
   } catch (error) {
