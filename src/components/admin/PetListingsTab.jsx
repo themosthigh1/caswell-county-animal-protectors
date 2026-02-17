@@ -119,7 +119,7 @@ export default function PetListingsTab() {
     mutationFn: async () => {
       await Promise.all([...selected].map(id => base44.entities.Pet.delete(id)));
     },
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ['admin-pets'] }); setSelected(new Set()); setShowBulkMenu(false); },
+    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ['admin-pets'] }); setSelected(new Set()); setShowBulkMenu(false); setConfirmModal(null); },
   });
 
   const isBulkLoading = bulkUpdateStatus.isPending || bulkToggleFeatured.isPending || bulkDelete.isPending;
