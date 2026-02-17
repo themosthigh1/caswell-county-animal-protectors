@@ -131,6 +131,7 @@ export default function PetForm({ pet, onClose, onSaved }) {
               </button>
             </div>
             <textarea value={form.description || ''} onChange={e => set('description', e.target.value)} rows={4} placeholder="Write a description or use AI to generate one…" className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 resize-none" />
+            {bioError && <p className="text-xs text-rose-600 mt-1">{bioError}</p>}
           </div>
           <div>
             <label className="block text-xs font-semibold text-gray-600 mb-1">Temperament / Personality</label>
