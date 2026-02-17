@@ -338,6 +338,17 @@ export default function PetListingsTab() {
           onSaved={() => {}}
         />
       )}
+
+      {confirmModal && (
+        <ConfirmModal
+          title={confirmModal.title}
+          message={confirmModal.message}
+          confirmLabel="Delete"
+          onConfirm={confirmModal.onConfirm}
+          onCancel={() => setConfirmModal(null)}
+          isLoading={deletePet.isPending || bulkDelete.isPending}
+        />
+      )}
     </div>
   );
 }
