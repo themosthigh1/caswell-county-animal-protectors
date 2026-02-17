@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
 import PetCard from '../components/pets/PetCard';
-import PetDetailModal from '../components/pets/PetDetailModal';
 import { PawPrint, Search, SlidersHorizontal } from 'lucide-react';
 
 const SPECIES = ['all', 'dog', 'cat', 'rabbit', 'bird', 'other'];
