@@ -296,6 +296,7 @@ export default function PetListingsTab() {
                     <div className="flex justify-between items-start">
                       <div>
                         <h3 className="font-bold text-gray-800">{pet.name}</h3>
+                        {pet.pet_id && <p className="text-xs text-gray-400 font-mono">#{pet.pet_id}</p>}
                         <p className="text-xs text-gray-500">{pet.breed || pet.species} • {pet.sex} {pet.size && `• ${pet.size}`}</p>
                         {pet.adoption_fee && <p className="text-xs text-green-700 font-semibold mt-0.5">${pet.adoption_fee} adoption fee</p>}
                       </div>
