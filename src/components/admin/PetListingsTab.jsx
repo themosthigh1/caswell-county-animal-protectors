@@ -38,6 +38,9 @@ export default function PetListingsTab() {
   const [editPet, setEditPet] = useState(null);
   const [showForm, setShowForm] = useState(false);
 
+  // Confirm modal
+  const [confirmModal, setConfirmModal] = useState(null); // { title, message, onConfirm }
+
   const { data: pets = [], isLoading } = useQuery({
     queryKey: ['admin-pets'],
     queryFn: () => base44.entities.Pet.list('-created_date', 200),
