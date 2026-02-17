@@ -3,8 +3,10 @@ import { base44 } from '@/api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
   Plus, Pencil, Trash2, Star, StarOff, Search, SlidersHorizontal,
-  CheckSquare, Square, ChevronDown, X
+  CheckSquare, Square, ChevronDown, X, ExternalLink
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '../../utils';
 import PetForm from './PetForm';
 import ConfirmModal from './ConfirmModal';
 
