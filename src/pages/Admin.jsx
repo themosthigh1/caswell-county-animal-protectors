@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { PawPrint, Search, MessageSquare, Heart, CheckCircle } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { PawPrint, Search, MessageSquare, Heart } from 'lucide-react';
 import PetListingsTab from '../components/admin/PetListingsTab';
+import MessagesTab from '../components/admin/MessagesTab';
+import LostFoundTab from '../components/admin/LostFoundTab';
 
 const TABS = [
   { id: 'pets', label: 'Pet Listings', icon: PawPrint },
