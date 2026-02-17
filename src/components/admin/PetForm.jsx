@@ -110,8 +110,19 @@ export default function PetForm({ pet, onClose, onSaved }) {
             </div>
           </div>
           <div>
-            <label className="block text-xs font-semibold text-gray-600 mb-1">Description</label>
-            <textarea value={form.description || ''} onChange={e => set('description', e.target.value)} rows={3} className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 resize-none" />
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-xs font-semibold text-gray-600">Description</label>
+              <button
+                type="button"
+                onClick={handleGenerateBio}
+                disabled={generatingBio || !form.name}
+                className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 hover:text-purple-700 bg-purple-50 hover:bg-purple-100 px-3 py-1 rounded-full transition-colors disabled:opacity-50"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                {generatingBio ? 'Generating…' : 'Generate with AI'}
+              </button>
+            </div>
+            <textarea value={form.description || ''} onChange={e => set('description', e.target.value)} rows={4} placeholder="Write a description or use AI to generate one…" className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 resize-none" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-gray-600 mb-1">Temperament / Personality</label>
