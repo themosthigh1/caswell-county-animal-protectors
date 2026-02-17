@@ -114,9 +114,6 @@ export default function Adopt() {
         </div>
       </div>
 
-      {selectedPet && (
-        <PetDetailModal pet={selectedPet} onClose={() => setSelectedPetId(null)} />
-      )}
     </div>
   );
 }
