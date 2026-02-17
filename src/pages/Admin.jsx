@@ -156,9 +156,6 @@ export default function Admin() {
         )}
       </div>
 
-      {showPetForm && (
-        <PetForm pet={editPet} onClose={() => { setShowPetForm(false); setEditPet(null); }} onSaved={() => {}} />
-      )}
     </div>
   );
 }
