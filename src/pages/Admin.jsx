@@ -15,23 +15,11 @@ const TABS = [
 
 export default function Admin() {
   const [tab, setTab] = useState('pets');
-  const queryClient = useQueryClient();
-
   const { data: user } = useQuery({ queryKey: ['auth'], queryFn: () => base44.auth.me() });
-  const { data: pets = [], isLoading: loadingPets } = useQuery({ queryKey: ['admin-pets'], queryFn: () => base44.entities.Pet.list('-created_date', 200) });
-  const { data: messages = [], isLoading: loadingMsgs } = useQuery({ queryKey: ['admin-messages'], queryFn: () => base44.entities.ContactMessage.list('-created_date', 100) });
+  const { data: pets = [] } = useQuery({ queryKey: ['admin-pets'], queryFn: () => base44.entities.Pet.list('-created_date', 200) });
+  const { data: messages = [] } = useQuery({ queryKey: ['admin-messages'], queryFn: () => base44.entities.ContactMessage.list('-created_date', 200) });
   const { data: donations = [] } = useQuery({ queryKey: ['admin-donations'], queryFn: () => base44.entities.Donation.list('-created_date', 100) });
-  const { data: reports = [] } = useQuery({ queryKey: ['admin-lf'], queryFn: () => base44.entities.LostFoundReport.list('-created_date', 100) });
-
-  const updateMsg = useMutation({
-    mutationFn: ({ id, data }) => base44.entities.ContactMessage.update(id, data),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-messages'] }),
-  });
-
-  const resolveReport = useMutation({
-    mutationFn: (id) => base44.entities.LostFoundReport.update(id, { status: 'resolved' }),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-lf'] }),
-  });
+  const { data: reports = [] } = useQuery({ queryKey: ['admin-lf'], queryFn: () => base44.entities.LostFoundReport.list('-created_date', 200) });
 
   if (!user || user.role !== 'admin') {
     return <div className="min-h-screen flex items-center justify-center text-gray-500">Access denied. Admins only.</div>;
