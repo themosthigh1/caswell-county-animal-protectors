@@ -93,7 +93,7 @@ export default function PetListingsTab() {
   // Mutations
   const deletePet = useMutation({
     mutationFn: (id) => base44.entities.Pet.delete(id),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin-pets'] }),
+    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ['admin-pets'] }); setConfirmModal(null); },
   });
 
   const toggleFeatured = useMutation({
