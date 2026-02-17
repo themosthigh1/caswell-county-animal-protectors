@@ -11,10 +11,7 @@ export default function Adopt() {
   const [species, setSpecies] = useState('all');
   const [size, setSize] = useState('all');
   const [search, setSearch] = useState('');
-  const [selectedPetId, setSelectedPetId] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('pet') || null;
-  });
+
 
   const { data: pets = [], isLoading } = useQuery({
     queryKey: ['pets-adopt'],
