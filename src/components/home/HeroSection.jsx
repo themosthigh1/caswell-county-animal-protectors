@@ -10,7 +10,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1920&q=80)` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/50 to-slate-950/30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24">
         <div className="max-w-2xl text-white">
