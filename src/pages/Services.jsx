@@ -63,7 +63,7 @@ export default function Services() {
         <div className="max-w-5xl mx-auto text-center">
           <Stethoscope className="w-10 h-10 mx-auto mb-3 text-cyan-400" />
           <h1 className="text-5xl font-black mb-4">Our Services</h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-white text-xl max-w-2xl mx-auto font-semibold">
             From spay & neuter to vaccinations and microchipping — we provide essential medical services to keep Caswell County pets healthy and families together.
           </p>
         </div>
@@ -78,12 +78,12 @@ export default function Services() {
                 <div className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mb-5 text-white`}>
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-black text-white mb-3">{title}</h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-5">{body}</p>
+                <h3 className="text-2xl font-black text-gray-900 mb-3">{title}</h3>
+                <p className="text-gray-700 text-base leading-relaxed mb-5 font-medium">{body}</p>
                 <ul className="space-y-2">
                   {bullets.map(b => (
-                    <li key={b} className="flex items-start gap-2 text-sm text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" /> {b}
+                    <li key={b} className="flex items-start gap-2 text-base text-gray-700 font-medium">
+                      <CheckCircle className="w-4 h-4 text-cyan-600 flex-shrink-0 mt-0.5" /> {b}
                     </li>
                   ))}
                 </ul>
@@ -98,25 +98,25 @@ export default function Services() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-black text-white mb-4">Schedule an Appointment</h2>
-              <p className="text-slate-300 mb-6 leading-relaxed">
+              <h2 className="text-3xl font-black text-gray-900 mb-4">Schedule an Appointment</h2>
+              <p className="text-gray-700 mb-6 leading-relaxed font-medium">
                 Ready to schedule a service or have questions about what we offer? Fill out the form and we'll be in touch, or give us a call during shelter hours.
               </p>
-              <div className="space-y-4 text-sm">
-                <div className="flex items-center gap-3 text-slate-300">
-                  <Phone className="w-5 h-5 text-cyan-400" />
-                  <a href="tel:3366944921" className="font-bold text-cyan-400 hover:text-cyan-300">(336) 694-4921</a>
+              <div className="space-y-4 text-base">
+                <div className="flex items-center gap-3 text-gray-700 font-semibold">
+                  <Phone className="w-5 h-5 text-cyan-600" />
+                  <a href="tel:3366944921" className="font-black text-cyan-700 hover:text-cyan-800">(336) 694-4921</a>
                 </div>
-                <div className="flex items-start gap-3 text-slate-300">
-                  <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700 font-medium">
+                  <MapPin className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                   <span>836 County Home Road, Yanceyville, NC 27379</span>
                 </div>
-                <div className="flex items-start gap-3 text-slate-300">
-                  <Clock className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-gray-700 font-medium">
+                  <Clock className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <div>Mon, Tue, Thu, Fri: 12pm – 4pm</div>
                     <div>Saturday: 10am – 2pm</div>
-                    <div className="text-slate-500">Wed & Sunday: Closed</div>
+                    <div className="text-gray-600">Wed & Sunday: Closed</div>
                   </div>
                 </div>
               </div>
@@ -125,13 +125,13 @@ export default function Services() {
             <div className="bg-white backdrop-blur-md rounded-2xl p-7 border border-cyan-200">
               {sent ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-10">
-                  <CheckCircle className="w-14 h-14 text-cyan-400 mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">Message Received!</h3>
-                  <p className="text-slate-300 text-sm">We'll be in touch soon to help with your service needs.</p>
+                  <CheckCircle className="w-14 h-14 text-cyan-600 mb-4" />
+                  <h3 className="text-xl font-black text-gray-900 mb-2">Message Received!</h3>
+                  <p className="text-gray-700 text-base font-medium">We'll be in touch soon to help with your service needs.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="font-bold text-white text-lg">Request Information</h3>
+                  <h3 className="font-black text-gray-900 text-xl">Request Information</h3>
                   <input required value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} placeholder="Your name *" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
                   <input required type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="Your email *" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
                   <input value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="Your phone" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
@@ -149,22 +149,22 @@ export default function Services() {
       {/* FAQ */}
       <section className="py-20 px-4 bg-cyan-50 backdrop-blur-md border-t border-cyan-200">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-black text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-black text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {FAQS.map((faq, i) => (
               <div key={i} className="bg-white backdrop-blur-md rounded-xl overflow-hidden ring-1 ring-cyan-200">
                 <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-white hover:bg-slate-800/60 transition-colors"
-                >
-                  {faq.q}
-                  <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-cyan-500/20 pt-3">
-                    {faq.a}
-                  </div>
-                )}
+                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                   className="w-full text-left px-6 py-4 flex justify-between items-center font-bold text-gray-900 hover:bg-gray-100 transition-colors"
+                 >
+                   {faq.q}
+                   <ChevronDown className={`w-5 h-5 text-gray-600 flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                 </button>
+                 {openFaq === i && (
+                   <div className="px-6 pb-5 text-base text-gray-700 leading-relaxed border-t border-cyan-200 pt-3 font-medium">
+                     {faq.a}
+                   </div>
+                 )}
               </div>
             ))}
           </div>

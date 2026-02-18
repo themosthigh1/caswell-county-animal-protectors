@@ -34,11 +34,11 @@ export default function Events() {
       {/* Header */}
       <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-16 px-4 border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 text-cyan-400 text-sm font-semibold mb-3">
+          <div className="flex items-center justify-center gap-2 text-white text-sm font-black mb-3">
             <Calendar className="w-4 h-4" /> UPCOMING EVENTS
           </div>
           <h1 className="text-5xl font-black mb-4">Events & Activities</h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-white text-xl max-w-2xl mx-auto font-semibold">
             Join us for adoption drives, fundraisers, vaccination clinics, and training sessions in Caswell County.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function Events() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         {isLoading ? (
-          <div className="text-center py-20 text-slate-400">Loading events...</div>
+          <div className="text-center py-20 text-gray-700 text-lg font-semibold">Loading events...</div>
         ) : view === 'calendar' ? (
           <EventCalendarView events={events} eventTypeLabels={EVENT_TYPE_LABELS} eventTypeColors={EVENT_TYPE_COLORS} />
         ) : (
