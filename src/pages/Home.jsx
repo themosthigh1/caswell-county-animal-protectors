@@ -16,7 +16,7 @@ export default function Home() {
       <DonateCallout />
 
       {/* Visit Us Section */}
-      <section className="py-20 bg-slate-950">
+      <section className="py-20 bg-slate-900">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-white mb-3">Visit Us</h2>
