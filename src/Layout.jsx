@@ -141,29 +141,29 @@ export default function Layout({ children, currentPageName }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-green-900 text-white">
+      <footer className="bg-slate-900/80 backdrop-blur-md border-t border-cyan-500/20 text-white">
         <div className="max-w-7xl mx-auto px-4 py-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center">
                   <PawPrint className="w-5 h-5 text-white" />
                 </div>
                 <div className="leading-tight">
                   <div className="text-sm font-bold">Animal Protection Society</div>
-                  <div className="text-xs text-green-300">Caswell County</div>
+                  <div className="text-xs text-cyan-400">Caswell County</div>
                 </div>
               </div>
-              <p className="text-green-200 text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm leading-relaxed">
                 Rescuing, sheltering, and rehoming animals in Caswell County. Every animal deserves a loving home.
               </p>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-green-300">Quick Links</h4>
+              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-cyan-400">Quick Links</h4>
               <ul className="space-y-2.5">
                 {[...NAV_LINKS, { label: 'Donate', page: 'Donate' }].map(link => (
                   <li key={link.page}>
-                    <Link to={createPageUrl(link.page)} className="text-sm text-green-200 hover:text-white transition-colors">
+                    <Link to={createPageUrl(link.page)} className="text-sm text-slate-300 hover:text-cyan-400 transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -171,35 +171,35 @@ export default function Layout({ children, currentPageName }) {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-green-300">Contact Us</h4>
-              <ul className="space-y-3 text-sm text-green-200">
+              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-cyan-400">Contact Us</h4>
+              <ul className="space-y-3 text-sm text-slate-300">
                 <li className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 mt-0.5 text-green-400 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 mt-0.5 text-cyan-400 flex-shrink-0" />
                   <span>836 County Home Road<br />Yanceyville, NC 27379</span>
                 </li>
                 <li>
-                  <a href="tel:3366944921" className="flex items-center gap-2 hover:text-white transition-colors">
-                    <Phone className="w-4 h-4 text-green-400" />
+                  <a href="tel:3366944921" className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                    <Phone className="w-4 h-4 text-cyan-400" />
                     (336) 694-4921
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-green-300">Hours</h4>
-              <table className="text-sm text-green-200 w-full">
+              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-cyan-400">Hours</h4>
+              <table className="text-sm text-slate-300 w-full">
                 <tbody>
                   <tr><td className="pr-3 py-1">Mon, Tue, Thu, Fri</td><td>12pm – 4pm</td></tr>
                   <tr><td className="pr-3 py-1">Saturday</td><td>10am – 2pm</td></tr>
-                  <tr><td className="pr-3 py-1 text-green-400">Wednesday</td><td className="text-green-400">Closed</td></tr>
-                  <tr><td className="pr-3 py-1 text-green-400">Sunday</td><td className="text-green-400">Closed</td></tr>
+                  <tr><td className="pr-3 py-1 text-cyan-400">Wednesday</td><td className="text-cyan-400">Closed</td></tr>
+                  <tr><td className="pr-3 py-1 text-cyan-400">Sunday</td><td className="text-cyan-400">Closed</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div className="border-t border-green-800/60">
-          <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-green-400">
+        <div className="border-t border-cyan-500/20">
+          <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-400">
             <span>© 2024 Animal Protection Society of Caswell County. All rights reserved.</span>
             <span>Made with ❤️ for the animals of Caswell County</span>
           </div>
