@@ -61,16 +61,16 @@ export default function Layout({ children, currentPageName }) {
       </div>
 
       {/* Navigation */}
-      <nav className={`bg-white sticky top-0 z-50 border-b transition-shadow ${scrolled ? 'shadow-md border-gray-200' : 'shadow-sm border-gray-100'}`}>
+      <nav className={`sticky top-0 z-50 transition-all backdrop-blur-md ${scrolled ? 'bg-slate-900/60 border-b border-cyan-500/30' : 'bg-slate-900/40 border-b border-cyan-500/20'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <Link to={createPageUrl('Home')} className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 bg-green-700 group-hover:bg-green-600 rounded-xl flex items-center justify-center transition-colors">
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 group-hover:shadow-lg group-hover:shadow-cyan-500/50 rounded-xl flex items-center justify-center transition-all">
                 <PawPrint className="w-5 h-5 text-white" />
               </div>
               <div className="leading-tight">
-                <div className="text-sm font-bold text-green-800">Animal Protection Society</div>
-                <div className="text-xs text-gray-500 font-medium">Caswell County, NC</div>
+                <div className="text-sm font-bold text-white">Animal Protection Society</div>
+                <div className="text-xs text-slate-400 font-medium">Caswell County, NC</div>
               </div>
             </Link>
 
@@ -81,8 +81,8 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl(link.page)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                     currentPageName === link.page
-                      ? 'bg-green-50 text-green-700 font-semibold'
-                      : 'text-gray-600 hover:text-green-700 hover:bg-green-50'
+                      ? 'bg-cyan-500/20 text-cyan-300 font-semibold backdrop-blur-sm'
+                      : 'text-slate-300 hover:text-cyan-400 hover:bg-cyan-500/10'
                   }`}
                 >
                   {link.label}
@@ -90,10 +90,10 @@ export default function Layout({ children, currentPageName }) {
               ))}
               <Link
                 to={createPageUrl('Donate')}
-                className={`ml-2 flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow ${
+                className={`ml-2 flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
                   currentPageName === 'Donate'
-                    ? 'bg-orange-700 text-white'
-                    : 'bg-orange-600 hover:bg-orange-700 text-white hover:scale-105'
+                    ? 'bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white shadow-lg shadow-fuchsia-500/50'
+                    : 'bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:shadow-lg hover:shadow-fuchsia-500/50 text-white'
                 }`}
               >
                 <Heart className="w-4 h-4" /> Donate
@@ -101,7 +101,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
 
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-600"
+              className="md:hidden p-2 rounded-lg hover:bg-cyan-500/20 text-cyan-400 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
