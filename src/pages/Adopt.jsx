@@ -30,11 +30,11 @@ export default function Adopt() {
       {/* Header */}
       <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-600 text-white py-16 px-4 border-b border-cyan-300">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 text-cyan-400 text-sm font-semibold mb-3">
+          <div className="flex items-center justify-center gap-2 text-white text-sm font-black mb-3">
             <PawPrint className="w-4 h-4" /> ADOPTION CENTER
           </div>
           <h1 className="text-5xl font-black mb-4">Find Your New Best Friend</h1>
-          <p className="text-slate-300 text-lg max-w-xl mx-auto">
+          <p className="text-white text-lg max-w-xl mx-auto font-medium">
             Every animal in our shelter has a story. Be the next chapter. Browse available pets and find the one who speaks to your heart.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function Adopt() {
           </div>
         ) : filtered.length > 0 ? (
           <>
-            <p className="text-sm text-gray-600 mb-6">{filtered.length} animal{filtered.length !== 1 ? 's' : ''} available</p>
+            <p className="text-sm text-gray-700 font-semibold mb-6">{filtered.length} animal{filtered.length !== 1 ? 's' : ''} available</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map(pet => (
                 <PetCard key={pet.id} pet={pet} />
@@ -91,10 +91,10 @@ export default function Adopt() {
             </div>
           </>
         ) : (
-          <div className="text-center py-24 text-gray-500">
-            <PawPrint className="w-16 h-16 mx-auto mb-4 opacity-30" />
-            <h3 className="text-xl font-semibold mb-2">No matches found</h3>
-            <p>Try adjusting your filters or check back soon — new animals arrive frequently!</p>
+          <div className="text-center py-24 text-gray-700">
+            <PawPrint className="w-16 h-16 mx-auto mb-4 opacity-40" />
+            <h3 className="text-xl font-bold mb-2 text-gray-800">No matches found</h3>
+            <p className="font-medium">Try adjusting your filters or check back soon — new animals arrive frequently!</p>
           </div>
         )}
       </div>
@@ -103,13 +103,13 @@ export default function Adopt() {
       <div className="bg-cyan-50 backdrop-blur-md border-t border-cyan-200 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Ready to Adopt?</h2>
-          <p className="text-gray-700 mb-6 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-800 mb-6 leading-relaxed max-w-2xl mx-auto font-medium">
             Visit us during shelter hours to meet your potential new companion. Bring valid ID and be prepared to discuss your living situation and pet experience. Adoption fees help cover vaccination, spay/neuter, and microchipping costs.
           </p>
-          <div className="inline-block bg-white backdrop-blur-md rounded-2xl p-5 text-left shadow-sm text-sm text-gray-700 border border-cyan-200">
-            <strong className="block mb-1 text-white">Shelter Hours</strong>
-            Mon, Tue, Thu, Fri: 12pm – 4pm &nbsp;•&nbsp; Saturday: 10am – 2pm &nbsp;•&nbsp; Wed & Sun: Closed<br />
-            <a href="tel:3366944921" className="font-bold text-cyan-400 hover:text-cyan-300">(336) 694-4921</a> &nbsp;•&nbsp; 836 County Home Road, Yanceyville, NC 27379
+          <div className="inline-block bg-white backdrop-blur-md rounded-2xl p-5 text-left shadow-sm text-sm text-gray-800 font-semibold border border-cyan-200">
+            <strong className="block mb-1 text-gray-900 font-black">Shelter Hours</strong>
+            <span className="text-gray-700">Mon, Tue, Thu, Fri: 12pm – 4pm &nbsp;•&nbsp; Saturday: 10am – 2pm &nbsp;•&nbsp; Wed & Sun: Closed</span><br />
+            <a href="tel:3366944921" className="font-black text-cyan-700 hover:text-cyan-800">(336) 694-4921</a> &nbsp;•&nbsp; <span className="text-gray-700">836 County Home Road, Yanceyville, NC 27379</span>
           </div>
         </div>
       </div>

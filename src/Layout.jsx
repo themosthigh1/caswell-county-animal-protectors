@@ -42,19 +42,19 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Top Info Bar */}
-      <div className="bg-white/80 backdrop-blur-md text-gray-700 text-xs py-3 px-4 hidden sm:block border-b border-cyan-200">
+      <div className="bg-white/90 backdrop-blur-md text-gray-800 text-sm py-3 px-4 hidden sm:block border-b border-cyan-200 font-medium">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4 flex-wrap">
           <div className="flex items-center gap-5">
-            <a href="tel:3366944921" className="flex items-center gap-1.5 hover:text-cyan-600 transition-colors">
-              <Phone className="w-3 h-3" /> (336) 694-4921
+            <a href="tel:3366944921" className="flex items-center gap-1.5 hover:text-cyan-700 transition-colors font-semibold">
+              <Phone className="w-3.5 h-3.5" /> (336) 694-4921
             </a>
-            <span className="flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-cyan-500" />
+            <span className="flex items-center gap-1.5 text-gray-700">
+              <MapPin className="w-3.5 h-3.5 text-cyan-600" />
               836 County Home Road, Yanceyville, NC 27379
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-gray-600">
-            <Clock className="w-3 h-3" />
+          <div className="flex items-center gap-1.5 text-gray-700">
+            <Clock className="w-3.5 h-3.5" />
             Mon/Tue/Thu/Fri: 12–4pm &bull; Sat: 10am–2pm &bull; Wed & Sun: Closed
           </div>
         </div>
@@ -69,8 +69,8 @@ export default function Layout({ children, currentPageName }) {
                 <PawPrint className="w-5 h-5 text-white" />
               </div>
               <div className="leading-tight">
-                <div className="text-sm font-bold text-gray-900">Animal Protection Society</div>
-                <div className="text-xs text-gray-500 font-medium">Caswell County, NC</div>
+                <div className="text-sm font-black text-gray-900">Animal Protection Society</div>
+                <div className="text-xs text-gray-700 font-semibold">Caswell County, NC</div>
               </div>
             </Link>
 
@@ -81,8 +81,8 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl(link.page)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                     currentPageName === link.page
-                      ? 'bg-cyan-100 text-cyan-700 font-semibold'
-                      : 'text-gray-600 hover:text-cyan-600 hover:bg-cyan-50'
+                      ? 'bg-cyan-100 text-cyan-800 font-bold'
+                      : 'text-gray-700 hover:text-cyan-700 hover:bg-cyan-50 font-medium'
                   }`}
                 >
                   {link.label}
@@ -116,7 +116,7 @@ export default function Layout({ children, currentPageName }) {
                 key={link.page}
                 to={createPageUrl(link.page)}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  currentPageName === link.page ? 'bg-cyan-100 text-cyan-700' : 'text-gray-600 hover:bg-cyan-50'
+                  currentPageName === link.page ? 'bg-cyan-100 text-cyan-800 font-semibold' : 'text-gray-700 hover:bg-cyan-50 font-medium'
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
@@ -150,20 +150,20 @@ export default function Layout({ children, currentPageName }) {
                   <PawPrint className="w-5 h-5 text-white" />
                 </div>
                 <div className="leading-tight">
-                  <div className="text-sm font-bold">Animal Protection Society</div>
-                  <div className="text-xs text-cyan-600">Caswell County</div>
+                  <div className="text-sm font-black text-gray-900">Animal Protection Society</div>
+                  <div className="text-xs text-cyan-700 font-semibold">Caswell County</div>
                 </div>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-700 text-sm leading-relaxed font-medium">
                 Rescuing, sheltering, and rehoming animals in Caswell County. Every animal deserves a loving home.
               </p>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-cyan-600">Quick Links</h4>
+              <h4 className="font-black text-sm uppercase tracking-wider mb-4 text-cyan-700">Quick Links</h4>
               <ul className="space-y-2.5">
                 {[...NAV_LINKS, { label: 'Donate', page: 'Donate' }].map(link => (
                   <li key={link.page}>
-                    <Link to={createPageUrl(link.page)} className="text-sm text-gray-600 hover:text-cyan-600 transition-colors">
+                    <Link to={createPageUrl(link.page)} className="text-sm text-gray-700 hover:text-cyan-700 transition-colors font-medium">
                       {link.label}
                     </Link>
                   </li>
@@ -171,35 +171,35 @@ export default function Layout({ children, currentPageName }) {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-cyan-600">Contact Us</h4>
-              <ul className="space-y-3 text-sm text-gray-600">
+              <h4 className="font-black text-sm uppercase tracking-wider mb-4 text-cyan-700">Contact Us</h4>
+              <ul className="space-y-3 text-sm text-gray-700 font-medium">
                 <li className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 mt-0.5 text-cyan-500 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 mt-0.5 text-cyan-600 flex-shrink-0" />
                   <span>836 County Home Road<br />Yanceyville, NC 27379</span>
                 </li>
                 <li>
-                  <a href="tel:3366944921" className="flex items-center gap-2 hover:text-cyan-600 transition-colors">
-                    <Phone className="w-4 h-4 text-cyan-500" />
+                  <a href="tel:3366944921" className="flex items-center gap-2 hover:text-cyan-700 transition-colors font-semibold">
+                    <Phone className="w-4 h-4 text-cyan-600" />
                     (336) 694-4921
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-cyan-600">Hours</h4>
-              <table className="text-sm text-gray-600 w-full">
+              <h4 className="font-black text-sm uppercase tracking-wider mb-4 text-cyan-700">Hours</h4>
+              <table className="text-sm text-gray-700 w-full font-medium">
                 <tbody>
                   <tr><td className="pr-3 py-1">Mon, Tue, Thu, Fri</td><td>12pm – 4pm</td></tr>
                   <tr><td className="pr-3 py-1">Saturday</td><td>10am – 2pm</td></tr>
-                  <tr><td className="pr-3 py-1 text-cyan-600">Wednesday</td><td className="text-cyan-600">Closed</td></tr>
-                  <tr><td className="pr-3 py-1 text-cyan-600">Sunday</td><td className="text-cyan-600">Closed</td></tr>
+                  <tr><td className="pr-3 py-1 text-cyan-700 font-semibold">Wednesday</td><td className="text-cyan-700 font-semibold">Closed</td></tr>
+                  <tr><td className="pr-3 py-1 text-cyan-700 font-semibold">Sunday</td><td className="text-cyan-700 font-semibold">Closed</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
         <div className="border-t border-cyan-200">
-          <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500">
+          <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-700 font-medium">
             <span>© 2024 Animal Protection Society of Caswell County. All rights reserved.</span>
             <span>Made with ❤️ for the animals of Caswell County</span>
           </div>
