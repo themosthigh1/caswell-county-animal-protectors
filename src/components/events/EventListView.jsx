@@ -14,7 +14,7 @@ export default function EventListView({ events, eventTypeLabels, eventTypeColors
           const isSameDay = startDate.toDateString() === endDate.toDateString();
 
           return (
-            <div key={event.id} className="bg-slate-800/40 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 hover:border-cyan-500/50 transition-all">
+            <div key={event.id} className="bg-slate-700/30 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 hover:border-cyan-500/50 transition-all">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                 {/* Left: Title & Type */}
                 <div className="flex-1">

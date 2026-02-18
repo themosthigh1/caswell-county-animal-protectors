@@ -162,7 +162,7 @@ export default function LostFound() {
 
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[...Array(8)].map((_, i) => <div key={i} className="bg-slate-800/40 backdrop-blur-md rounded-2xl h-72 animate-pulse border border-cyan-500/20" />)}
+            {[...Array(8)].map((_, i) => <div key={i} className="bg-slate-700/20 backdrop-blur-md rounded-2xl h-72 animate-pulse border border-cyan-500/20" />)}
           </div>
         ) : current.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -179,7 +179,7 @@ export default function LostFound() {
 
       {showForm && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setShowForm(null)}>
-          <div className="bg-slate-800/60 backdrop-blur-md rounded-2xl w-full max-w-xl max-h-[95vh] overflow-y-auto shadow-2xl p-6 sm:p-8 border border-cyan-500/20" onClick={e => e.stopPropagation()}>
+          <div className="bg-slate-700/60 backdrop-blur-md rounded-2xl w-full max-w-xl max-h-[95vh] overflow-y-auto shadow-2xl p-6 sm:p-8 border border-cyan-500/20" onClick={e => e.stopPropagation()}>
             <h2 className={`text-2xl font-black mb-6 ${showForm === 'lost' ? 'text-rose-400' : 'text-amber-400'}`}>
               {showForm === 'lost' ? '🔍 Report a Lost Pet' : '🐾 Report a Found Pet'}
             </h2>

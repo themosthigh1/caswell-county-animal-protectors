@@ -39,8 +39,8 @@ export default function Donate() {
   };
 
   if (sent) return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
-      <div className="bg-slate-800/40 backdrop-blur-md rounded-3xl shadow-xl p-12 max-w-md w-full text-center border border-cyan-500/20">
+    <div className="min-h-screen bg-slate-800 flex items-center justify-center px-4">
+      <div className="bg-slate-700/40 backdrop-blur-md rounded-3xl shadow-xl p-12 max-w-md w-full text-center border border-cyan-500/20">
         <div className="w-20 h-20 bg-fuchsia-500/20 rounded-full flex items-center justify-center mx-auto mb-5 border border-fuchsia-500/30">
           <Heart className="w-10 h-10 text-fuchsia-400" />
         </div>
@@ -68,12 +68,12 @@ export default function Donate() {
       </div>
 
       {/* Impact */}
-      <section className="bg-slate-900/40 backdrop-blur-md border-b border-cyan-500/20 py-12 px-4">
+      <section className="bg-slate-700/20 backdrop-blur-md border-b border-cyan-500/20 py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-center text-2xl font-black text-white mb-8">Your Impact</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {IMPACT.map(({ icon: Icon, amount: a, label }) => (
-              <div key={a} className="text-center p-5 bg-slate-800/40 backdrop-blur-md rounded-2xl border border-cyan-500/20">
+              <div key={a} className="text-center p-5 bg-slate-700/30 backdrop-blur-md rounded-2xl border border-cyan-500/20">
                 <Icon className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
                 <div className="text-2xl font-black text-white">{a}</div>
                 <p className="text-xs text-slate-300 mt-1 leading-snug">{label}</p>
@@ -86,7 +86,7 @@ export default function Donate() {
       {/* Form */}
       <section className="py-20 px-4">
         <div className="max-w-xl mx-auto">
-          <div className="bg-slate-800/40 backdrop-blur-md rounded-3xl shadow-lg p-8 border border-cyan-500/20">
+          <div className="bg-slate-700/30 backdrop-blur-md rounded-3xl shadow-lg p-8 border border-cyan-500/20">
             <h2 className="text-2xl font-black text-white mb-6">Make a Donation</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Amount */}

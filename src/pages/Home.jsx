@@ -16,21 +16,21 @@ export default function Home() {
       <DonateCallout />
 
       {/* Visit Us Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-slate-700/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-white mb-3">Visit Us</h2>
             <p className="text-slate-300 text-lg">We'd love to meet you and your future pet.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-7 shadow-sm ring-1 ring-cyan-500/20 text-center hover:ring-cyan-500/40 transition-all">
+            <div className="bg-slate-700/20 backdrop-blur-md rounded-2xl p-7 shadow-sm ring-1 ring-cyan-500/20 text-center hover:ring-cyan-500/40 transition-all">
               <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-7 h-7 text-white" />
               </div>
               <h3 className="font-bold text-white mb-2">Our Location</h3>
               <p className="text-slate-300 text-sm leading-relaxed">836 County Home Road<br />Yanceyville, NC 27379</p>
             </div>
-            <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-7 shadow-sm ring-1 ring-cyan-500/20 text-center hover:ring-cyan-500/40 transition-all">
+            <div className="bg-slate-700/20 backdrop-blur-md rounded-2xl p-7 shadow-sm ring-1 ring-cyan-500/20 text-center hover:ring-cyan-500/40 transition-all">
               <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-7 h-7 text-white" />
               </div>
@@ -43,7 +43,7 @@ export default function Home() {
                 </tbody>
               </table>
             </div>
-            <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-7 shadow-sm ring-1 ring-cyan-500/20 text-center hover:ring-cyan-500/40 transition-all">
+            <div className="bg-slate-700/20 backdrop-blur-md rounded-2xl p-7 shadow-sm ring-1 ring-cyan-500/20 text-center hover:ring-cyan-500/40 transition-all">
               <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-7 h-7 text-white" />
               </div>

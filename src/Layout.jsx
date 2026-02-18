@@ -40,9 +40,9 @@ export default function Layout({ children, currentPageName }) {
     : NAV_LINKS;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900">
+    <div className="min-h-screen flex flex-col bg-slate-800">
       {/* Top Info Bar */}
-      <div className="bg-slate-900/50 backdrop-blur-md text-white text-xs py-3 px-4 hidden sm:block border-b border-cyan-500/20">
+      <div className="bg-slate-700/30 backdrop-blur-md text-white text-xs py-3 px-4 hidden sm:block border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4 flex-wrap">
           <div className="flex items-center gap-5">
             <a href="tel:3366944921" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
@@ -61,7 +61,7 @@ export default function Layout({ children, currentPageName }) {
       </div>
 
       {/* Navigation */}
-      <nav className={`sticky top-0 z-50 transition-all backdrop-blur-md ${scrolled ? 'bg-slate-900/60 border-b border-cyan-500/30' : 'bg-slate-900/40 border-b border-cyan-500/20'}`}>
+      <nav className={`sticky top-0 z-50 transition-all backdrop-blur-md ${scrolled ? 'bg-slate-700/40 border-b border-cyan-500/30' : 'bg-slate-700/20 border-b border-cyan-500/20'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <Link to={createPageUrl('Home')} className="flex items-center gap-2.5 group">
@@ -110,7 +110,7 @@ export default function Layout({ children, currentPageName }) {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden border-t border-cyan-500/20 bg-slate-900/60 backdrop-blur-md px-4 pt-3 pb-5 space-y-1">
+          <div className="md:hidden border-t border-cyan-500/20 bg-slate-700/40 backdrop-blur-md px-4 pt-3 pb-5 space-y-1">
             {allLinks.map(link => (
               <Link
                 key={link.page}
@@ -141,7 +141,7 @@ export default function Layout({ children, currentPageName }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-slate-900/80 backdrop-blur-md border-t border-cyan-500/20 text-white">
+      <footer className="bg-slate-700/40 backdrop-blur-md border-t border-cyan-500/20 text-white">
         <div className="max-w-7xl mx-auto px-4 py-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>

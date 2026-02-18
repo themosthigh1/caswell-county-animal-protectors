@@ -74,7 +74,7 @@ export default function Services() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SERVICES.map(({ icon: Icon, color, title, body, bullets }) => (
-              <div key={title} className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-8 ring-1 ring-cyan-500/20 hover:ring-opacity-60 transition-all hover:bg-slate-800/60">
+              <div key={title} className="bg-slate-700/30 backdrop-blur-md rounded-2xl p-8 ring-1 ring-cyan-500/20 hover:ring-opacity-60 transition-all hover:bg-slate-700/40">
                 <div className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mb-5 text-white`}>
                   <Icon className="w-7 h-7" />
                 </div>
@@ -94,7 +94,7 @@ export default function Services() {
       </section>
 
       {/* Contact / Schedule */}
-      <section className="py-20 px-4 bg-slate-900/40 backdrop-blur-md border-t border-cyan-500/20">
+      <section className="py-20 px-4 bg-slate-700/20 backdrop-blur-md border-t border-cyan-500/20">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -122,7 +122,7 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-7 border border-cyan-500/20">
+            <div className="bg-slate-700/30 backdrop-blur-md rounded-2xl p-7 border border-cyan-500/20">
               {sent ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-10">
                   <CheckCircle className="w-14 h-14 text-cyan-400 mb-4" />
@@ -147,12 +147,12 @@ export default function Services() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-slate-900/40 backdrop-blur-md border-t border-cyan-500/20">
+      <section className="py-20 px-4 bg-slate-700/20 backdrop-blur-md border-t border-cyan-500/20">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {FAQS.map((faq, i) => (
-              <div key={i} className="bg-slate-800/40 backdrop-blur-md rounded-xl overflow-hidden ring-1 ring-cyan-500/20">
+              <div key={i} className="bg-slate-700/30 backdrop-blur-md rounded-xl overflow-hidden ring-1 ring-cyan-500/20">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-white hover:bg-slate-800/60 transition-colors"

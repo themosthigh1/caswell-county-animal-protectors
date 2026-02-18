@@ -38,18 +38,18 @@ export default function EventCalendarView({ events, eventTypeLabels, eventTypeCo
       </div>
 
       {/* Calendar Grid */}
-      <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl border border-cyan-500/20 overflow-hidden">
+      <div className="bg-slate-700/30 backdrop-blur-md rounded-2xl border border-cyan-500/20 overflow-hidden">
         {/* Week Days Header */}
-        <div className="grid grid-cols-7 gap-px bg-slate-900/50">
+        <div className="grid grid-cols-7 gap-px bg-slate-700/20">
           {weekDays.map(day => (
-            <div key={day} className="bg-slate-800/50 border-b border-cyan-500/20 px-4 py-3 text-center font-bold text-slate-300 text-sm">
+            <div key={day} className="bg-slate-700/40 border-b border-cyan-500/20 px-4 py-3 text-center font-bold text-slate-300 text-sm">
               {day}
             </div>
           ))}
         </div>
 
         {/* Days */}
-        <div className="grid grid-cols-7 gap-px bg-slate-900/50">
+        <div className="grid grid-cols-7 gap-px bg-slate-700/20">
           {days.map(day => {
             const dateStr = format(day, 'yyyy-MM-dd');
             const dayEvents = eventsMap[dateStr] || [];
@@ -60,8 +60,8 @@ export default function EventCalendarView({ events, eventTypeLabels, eventTypeCo
               <div
                 key={dateStr}
                 className={`min-h-32 p-2 border-b border-r border-cyan-500/10 ${
-                  isCurrentMonth ? 'bg-slate-800/30' : 'bg-slate-900/50'
-                } ${isToday ? 'bg-cyan-500/10' : ''}`}
+                  isCurrentMonth ? 'bg-slate-700/15' : 'bg-slate-700/10'
+                } ${isToday ? 'bg-cyan-500/15' : ''}`}
               >
                 <div className={`text-sm font-bold mb-1 ${isToday ? 'text-cyan-400' : 'text-slate-400'}`}>
                   {format(day, 'd')}

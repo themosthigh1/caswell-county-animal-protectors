@@ -72,7 +72,7 @@ export default function EventsTab() {
       </div>
 
       {/* Search & Filters */}
-      <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-4 mb-5 space-y-3">
+      <div className="bg-slate-700/30 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-4 mb-5 space-y-3">
         <div className="flex gap-3 flex-wrap">
           <div className="relative flex-1 min-w-48">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -128,7 +128,7 @@ export default function EventsTab() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {filtered.map(event => (
-            <div key={event.id} className="bg-slate-800/40 backdrop-blur-md rounded-xl border border-cyan-500/20 p-4">
+            <div key={event.id} className="bg-slate-700/30 backdrop-blur-md rounded-xl border border-cyan-500/20 p-4">
               <div className="flex justify-between items-start gap-2 mb-2">
                 <div className="flex-1">
                   <h3 className="font-bold text-white text-lg">{event.title}</h3>
