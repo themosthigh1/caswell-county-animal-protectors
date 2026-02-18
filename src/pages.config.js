@@ -55,6 +55,7 @@ import Home from './pages/Home';
 import LostFound from './pages/LostFound';
 import PetDetail from './pages/PetDetail';
 import Services from './pages/Services';
+import Events from './pages/Events';
 import __Layout from './Layout.jsx';
 
 
@@ -67,6 +68,7 @@ export const PAGES = {
     "LostFound": LostFound,
     "PetDetail": PetDetail,
     "Services": Services,
+    "Events": Events,
 }
 
 export const pagesConfig = {
