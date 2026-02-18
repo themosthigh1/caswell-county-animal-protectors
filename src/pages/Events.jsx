@@ -45,7 +45,7 @@ export default function Events() {
       </div>
 
       {/* View Toggle */}
-      <div className="sticky top-16 z-30 bg-slate-700/20 backdrop-blur-md border-b border-cyan-500/20">
+      <div className="sticky top-16 z-30 bg-white/80 backdrop-blur-md border-b border-cyan-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex gap-3">
           <button
             onClick={() => setView('calendar')}

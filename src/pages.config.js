@@ -51,11 +51,11 @@ import Admin from './pages/Admin';
 import Adopt from './pages/Adopt';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
+import Events from './pages/Events';
 import Home from './pages/Home';
 import LostFound from './pages/LostFound';
 import PetDetail from './pages/PetDetail';
 import Services from './pages/Services';
-import Events from './pages/Events';
 import __Layout from './Layout.jsx';
 
 
@@ -64,11 +64,11 @@ export const PAGES = {
     "Adopt": Adopt,
     "Contact": Contact,
     "Donate": Donate,
+    "Events": Events,
     "Home": Home,
     "LostFound": LostFound,
     "PetDetail": PetDetail,
     "Services": Services,
-    "Events": Events,
 }
 
 export const pagesConfig = {

@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Info */}
           <div className="space-y-6">
-            <div className="bg-slate-700/30 backdrop-blur-md rounded-2xl p-6 shadow-sm ring-1 ring-cyan-500/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl p-6 shadow-sm ring-1 ring-cyan-200">
               <div className="flex items-center gap-3 mb-1">
                 <Phone className="w-5 h-5 text-cyan-400" />
                 <h3 className="font-bold text-white">Phone</h3>
@@ -51,7 +51,7 @@ export default function Contact() {
               <p className="text-xs text-slate-400 mt-1">Call during shelter hours</p>
             </div>
 
-            <div className="bg-slate-700/30 backdrop-blur-md rounded-2xl p-6 shadow-sm ring-1 ring-cyan-500/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl p-6 shadow-sm ring-1 ring-cyan-200">
               <div className="flex items-center gap-3 mb-2">
                 <MapPin className="w-5 h-5 text-cyan-400" />
                 <h3 className="font-bold text-white">Location</h3>
@@ -69,7 +69,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="bg-slate-700/30 backdrop-blur-md rounded-2xl p-6 shadow-sm ring-1 ring-cyan-500/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl p-6 shadow-sm ring-1 ring-cyan-200">
               <div className="flex items-center gap-3 mb-3">
                 <Clock className="w-5 h-5 text-cyan-400" />
                 <h3 className="font-bold text-white">Hours</h3>
@@ -93,7 +93,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-2 bg-slate-700/30 backdrop-blur-md rounded-2xl p-8 shadow-sm ring-1 ring-cyan-500/20">
+          <div className="lg:col-span-2 bg-white backdrop-blur-md rounded-2xl p-8 shadow-sm ring-1 ring-cyan-200">
             {sent ? (
               <div className="flex flex-col items-center justify-center h-full text-center py-16">
                 <CheckCircle className="w-16 h-16 text-cyan-400 mb-5" />
@@ -120,7 +120,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-400 mb-1.5">Inquiry Type</label>
-                    <select value={form.inquiry_type} onChange={e => setForm(p => ({ ...p, inquiry_type: e.target.value }))} className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                    <select value={form.inquiry_type} onChange={e => setForm(p => ({ ...p, inquiry_type: e.target.value }))} className="w-full px-4 py-3 bg-gray-100 border border-cyan-300 text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
                       {INQUIRY_TYPES.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
                     </select>
                   </div>

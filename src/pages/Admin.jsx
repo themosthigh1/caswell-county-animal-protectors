@@ -43,7 +43,7 @@ export default function Admin() {
               { label: 'Total Donations', value: `$${totalDonations.toLocaleString()}` },
               { label: 'Active Lost/Found', value: reports.filter(r => r.status === 'active').length },
             ].map(s => (
-              <div key={s.label} className="bg-cyan-500/20 backdrop-blur-sm rounded-xl px-5 py-3 text-center border border-cyan-500/20">
+              <div key={s.label} className="bg-cyan-100 backdrop-blur-sm rounded-xl px-5 py-3 text-center border border-cyan-200">
                 <div className="text-2xl font-black text-white">{s.value}</div>
                 <div className="text-xs text-cyan-400">{s.label}</div>
               </div>
@@ -76,13 +76,13 @@ export default function Admin() {
             <p className="text-cyan-400 font-bold text-lg mb-5">Total Received: ${totalDonations.toLocaleString()}</p>
             <div className="space-y-2">
               {donations.map(d => (
-                <div key={d.id} className="bg-slate-700/30 backdrop-blur-md rounded-xl p-4 ring-1 ring-cyan-500/20 flex justify-between items-center gap-4 flex-wrap">
+                <div key={d.id} className="bg-white backdrop-blur-md rounded-xl p-4 ring-1 ring-cyan-200 flex justify-between items-center gap-4 flex-wrap">
                   <div>
-                    <span className="font-bold text-white">{d.anonymous ? 'Anonymous Donor' : d.donor_name}</span>
-                    {!d.anonymous && <span className="text-sm text-slate-400 ml-2">{d.donor_email}</span>}
-                    <div className="text-xs text-slate-500 mt-0.5">{d.purpose?.replace('_', ' ')} {d.message && `• "${d.message}"`}</div>
+                    <span className="font-bold text-gray-900">{d.anonymous ? 'Anonymous Donor' : d.donor_name}</span>
+                    {!d.anonymous && <span className="text-sm text-gray-600 ml-2">{d.donor_email}</span>}
+                    <div className="text-xs text-gray-600 mt-0.5">{d.purpose?.replace('_', ' ')} {d.message && `• "${d.message}"`}</div>
                   </div>
-                  <span className="text-xl font-black text-cyan-400">${d.amount?.toLocaleString()}</span>
+                  <span className="text-xl font-black text-cyan-600">${d.amount?.toLocaleString()}</span>
                 </div>
               ))}
             </div>
