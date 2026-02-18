@@ -42,18 +42,18 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div className="min-h-screen flex flex-col bg-slate-950">
       {/* Top Info Bar */}
-      <div className="bg-green-900 text-white text-xs py-2 px-4 hidden sm:block">
+      <div className="bg-slate-900/50 backdrop-blur-md text-white text-xs py-3 px-4 hidden sm:block border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4 flex-wrap">
           <div className="flex items-center gap-5">
-            <a href="tel:3366944921" className="flex items-center gap-1.5 hover:text-amber-300 transition-colors">
+            <a href="tel:3366944921" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
               <Phone className="w-3 h-3" /> (336) 694-4921
             </a>
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-green-400" />
+              <MapPin className="w-3 h-3 text-cyan-400" />
               836 County Home Road, Yanceyville, NC 27379
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-green-200">
+          <div className="flex items-center gap-1.5 text-slate-300">
             <Clock className="w-3 h-3" />
             Mon/Tue/Thu/Fri: 12–4pm &bull; Sat: 10am–2pm &bull; Wed & Sun: Closed
           </div>
