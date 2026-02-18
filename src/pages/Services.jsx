@@ -57,13 +57,13 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className="min-h-screen bg-slate-950">
       {/* Hero */}
-      <div className="bg-green-800 text-white py-16 px-4">
+      <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-16 px-4 border-b border-cyan-500/20">
         <div className="max-w-5xl mx-auto text-center">
-          <Stethoscope className="w-10 h-10 mx-auto mb-3 text-green-300" />
+          <Stethoscope className="w-10 h-10 mx-auto mb-3 text-cyan-400" />
           <h1 className="text-5xl font-black mb-4">Our Services</h1>
-          <p className="text-green-200 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
             From spay & neuter to vaccinations and microchipping — we provide essential medical services to keep Caswell County pets healthy and families together.
           </p>
         </div>
@@ -74,16 +74,16 @@ export default function Services() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SERVICES.map(({ icon: Icon, color, title, body, bullets }) => (
-              <div key={title} className="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-gray-100 hover:shadow-md transition-shadow">
-                <div className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mb-5`}>
-                  <Icon className="w-7 h-7 text-white" />
+              <div key={title} className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-8 ring-1 ring-cyan-500/20 hover:ring-opacity-60 transition-all hover:bg-slate-800/60">
+                <div className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mb-5 text-white`}>
+                  <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">{title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">{body}</p>
+                <h3 className="text-2xl font-black text-white mb-3">{title}</h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-5">{body}</p>
                 <ul className="space-y-2">
                   {bullets.map(b => (
-                    <li key={b} className="flex items-start gap-2 text-sm text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> {b}
+                    <li key={b} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" /> {b}
                     </li>
                   ))}
                 </ul>
@@ -94,49 +94,49 @@ export default function Services() {
       </section>
 
       {/* Contact / Schedule */}
-      <section className="py-20 px-4 bg-white border-t border-gray-100">
+      <section className="py-20 px-4 bg-slate-900/40 backdrop-blur-md border-t border-cyan-500/20">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-black text-gray-900 mb-4">Schedule an Appointment</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <h2 className="text-3xl font-black text-white mb-4">Schedule an Appointment</h2>
+              <p className="text-slate-300 mb-6 leading-relaxed">
                 Ready to schedule a service or have questions about what we offer? Fill out the form and we'll be in touch, or give us a call during shelter hours.
               </p>
               <div className="space-y-4 text-sm">
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Phone className="w-5 h-5 text-green-600" />
-                  <a href="tel:3366944921" className="font-bold text-green-700 hover:underline">(336) 694-4921</a>
+                <div className="flex items-center gap-3 text-slate-300">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <a href="tel:3366944921" className="font-bold text-cyan-400 hover:text-cyan-300">(336) 694-4921</a>
                 </div>
-                <div className="flex items-start gap-3 text-gray-700">
-                  <MapPin className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-slate-300">
+                  <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <span>836 County Home Road, Yanceyville, NC 27379</span>
                 </div>
-                <div className="flex items-start gap-3 text-gray-700">
-                  <Clock className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-slate-300">
+                  <Clock className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <div>Mon, Tue, Thu, Fri: 12pm – 4pm</div>
                     <div>Saturday: 10am – 2pm</div>
-                    <div className="text-gray-400">Wed & Sunday: Closed</div>
+                    <div className="text-slate-500">Wed & Sunday: Closed</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-stone-50 rounded-2xl p-7">
+            <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-7 border border-cyan-500/20">
               {sent ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-10">
-                  <CheckCircle className="w-14 h-14 text-green-500 mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Message Received!</h3>
-                  <p className="text-gray-500 text-sm">We'll be in touch soon to help with your service needs.</p>
+                  <CheckCircle className="w-14 h-14 text-cyan-400 mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Message Received!</h3>
+                  <p className="text-slate-300 text-sm">We'll be in touch soon to help with your service needs.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="font-bold text-gray-900 text-lg">Request Information</h3>
-                  <input required value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} placeholder="Your name *" className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 bg-white" />
-                  <input required type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="Your email *" className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 bg-white" />
-                  <input value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="Your phone" className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 bg-white" />
-                  <textarea required value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} placeholder="What service are you interested in? Tell us about your pet..." rows={4} className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-300 resize-none bg-white" />
-                  <button type="submit" disabled={mutation.isPending} className="w-full bg-green-700 hover:bg-green-600 disabled:opacity-60 text-white font-bold py-3 rounded-full transition-colors">
+                  <h3 className="font-bold text-white text-lg">Request Information</h3>
+                  <input required value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} placeholder="Your name *" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                  <input required type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="Your email *" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                  <input value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="Your phone" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                  <textarea required value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} placeholder="What service are you interested in? Tell us about your pet..." rows={4} className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none placeholder-slate-500" />
+                  <button type="submit" disabled={mutation.isPending} className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:shadow-lg hover:shadow-cyan-500/50 disabled:opacity-60 text-white font-bold py-3 rounded-full transition-colors">
                     {mutation.isPending ? 'Sending…' : 'Send Request'}
                   </button>
                 </form>
@@ -147,21 +147,21 @@ export default function Services() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-stone-50 border-t border-gray-100">
+      <section className="py-20 px-4 bg-slate-900/40 backdrop-blur-md border-t border-cyan-500/20">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-black text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {FAQS.map((faq, i) => (
-              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm ring-1 ring-gray-100">
+              <div key={i} className="bg-slate-800/40 backdrop-blur-md rounded-xl overflow-hidden ring-1 ring-cyan-500/20">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-gray-800 hover:bg-gray-50 transition-colors"
+                  className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-white hover:bg-slate-800/60 transition-colors"
                 >
                   {faq.q}
-                  <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                  <div className="px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-cyan-500/20 pt-3">
                     {faq.a}
                   </div>
                 )}

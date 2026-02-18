@@ -128,19 +128,19 @@ export default function LostFound() {
   const current = tab === 'lost' ? lost : found;
 
   return (
-    <div className="min-h-screen bg-stone-50">
-      <div className="bg-amber-700 text-white py-16 px-4">
+    <div className="min-h-screen bg-slate-950">
+      <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-16 px-4 border-b border-cyan-500/20">
         <div className="max-w-5xl mx-auto text-center">
-          <Search className="w-10 h-10 mx-auto mb-3 text-amber-300" />
+          <Search className="w-10 h-10 mx-auto mb-3 text-cyan-400" />
           <h1 className="text-5xl font-black mb-4">Lost & Found Pets</h1>
-          <p className="text-amber-100 text-lg max-w-xl mx-auto">
+          <p className="text-slate-300 text-lg max-w-xl mx-auto">
             Lost your pet? Found a stray in Caswell County? Post a report and help reunite animals with their families.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-            <button onClick={() => setShowForm('lost')} className="bg-rose-600 hover:bg-rose-700 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg">
+            <button onClick={() => setShowForm('lost')} className="bg-gradient-to-r from-rose-600 to-pink-600 hover:shadow-lg hover:shadow-rose-500/50 text-white font-bold px-8 py-3.5 rounded-full transition-colors">
               🔍 Report a Lost Pet
             </button>
-            <button onClick={() => setShowForm('found')} className="bg-white text-amber-800 hover:bg-amber-50 font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg">
+            <button onClick={() => setShowForm('found')} className="bg-gradient-to-r from-amber-600 to-orange-600 hover:shadow-lg hover:shadow-amber-500/50 text-white font-bold px-8 py-3.5 rounded-full transition-colors">
               🐾 Report a Found Pet
             </button>
           </div>
@@ -148,12 +148,12 @@ export default function LostFound() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <div className="flex items-center gap-4 mb-8 border-b border-gray-200">
+        <div className="flex items-center gap-4 mb-8 border-b border-cyan-500/20">
           {[['lost', `Lost (${lost.length})`], ['found', `Found (${found.length})`]].map(([val, label]) => (
             <button
               key={val}
               onClick={() => setTab(val)}
-              className={`pb-3 font-bold text-sm transition-all border-b-2 -mb-px ${tab === val ? (val === 'lost' ? 'border-rose-600 text-rose-600' : 'border-amber-600 text-amber-600') : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+              className={`pb-3 font-bold text-sm transition-all border-b-2 -mb-px ${tab === val ? (val === 'lost' ? 'border-rose-500 text-rose-400' : 'border-amber-500 text-amber-400') : 'border-transparent text-slate-500 hover:text-slate-300'}`}
             >
               {label}
             </button>
@@ -162,14 +162,14 @@ export default function LostFound() {
 
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[...Array(8)].map((_, i) => <div key={i} className="bg-white rounded-2xl h-72 animate-pulse" />)}
+            {[...Array(8)].map((_, i) => <div key={i} className="bg-slate-800/40 backdrop-blur-md rounded-2xl h-72 animate-pulse border border-cyan-500/20" />)}
           </div>
         ) : current.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {current.map(r => <ReportCard key={r.id} report={r} />)}
           </div>
         ) : (
-          <div className="text-center py-20 text-gray-400">
+          <div className="text-center py-20 text-slate-500">
             <AlertTriangle className="w-12 h-12 mx-auto mb-3 opacity-30" />
             <p>No {tab} pet reports at this time.</p>
             <p className="text-sm mt-1">Be the first to help — post a report above.</p>
@@ -179,8 +179,8 @@ export default function LostFound() {
 
       {showForm && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setShowForm(null)}>
-          <div className="bg-white rounded-2xl w-full max-w-xl max-h-[95vh] overflow-y-auto shadow-2xl p-6 sm:p-8" onClick={e => e.stopPropagation()}>
-            <h2 className={`text-2xl font-black mb-6 ${showForm === 'lost' ? 'text-rose-700' : 'text-amber-700'}`}>
+          <div className="bg-slate-800/60 backdrop-blur-md rounded-2xl w-full max-w-xl max-h-[95vh] overflow-y-auto shadow-2xl p-6 sm:p-8 border border-cyan-500/20" onClick={e => e.stopPropagation()}>
+            <h2 className={`text-2xl font-black mb-6 ${showForm === 'lost' ? 'text-rose-400' : 'text-amber-400'}`}>
               {showForm === 'lost' ? '🔍 Report a Lost Pet' : '🐾 Report a Found Pet'}
             </h2>
             <ReportForm type={showForm} onClose={() => setShowForm(null)} />

@@ -28,11 +28,11 @@ export default function Admin() {
   const totalDonations = donations.reduce((s, d) => s + (d.amount || 0), 0);
 
   return (
-    <div className="min-h-screen bg-stone-50">
-      <div className="bg-green-900 text-white px-6 py-8">
+    <div className="min-h-screen bg-slate-950">
+      <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white px-6 py-8 border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-black">Admin Dashboard</h1>
-          <p className="text-green-300 text-sm mt-1">Animal Protection Society of Caswell County</p>
+          <p className="text-cyan-400 text-sm mt-1">Animal Protection Society of Caswell County</p>
           <div className="flex flex-wrap gap-4 mt-6">
             {[
               { label: 'Pets Available', value: pets.filter(p => p.status === 'available').length },
@@ -40,9 +40,9 @@ export default function Admin() {
               { label: 'Total Donations', value: `$${totalDonations.toLocaleString()}` },
               { label: 'Active Lost/Found', value: reports.filter(r => r.status === 'active').length },
             ].map(s => (
-              <div key={s.label} className="bg-white/10 rounded-xl px-5 py-3 text-center">
-                <div className="text-2xl font-black">{s.value}</div>
-                <div className="text-xs text-green-300">{s.label}</div>
+              <div key={s.label} className="bg-cyan-500/10 backdrop-blur-sm rounded-xl px-5 py-3 text-center border border-cyan-500/20">
+                <div className="text-2xl font-black text-white">{s.value}</div>
+                <div className="text-xs text-cyan-400">{s.label}</div>
               </div>
             ))}
           </div>
@@ -50,12 +50,12 @@ export default function Admin() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <div className="flex gap-2 mb-8 border-b border-gray-200 flex-wrap">
+        <div className="flex gap-2 mb-8 border-b border-cyan-500/20 flex-wrap">
           {TABS.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
               onClick={() => setTab(id)}
-              className={`flex items-center gap-2 px-4 py-3 font-semibold text-sm transition-all border-b-2 -mb-px ${tab === id ? 'border-green-700 text-green-700' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+              className={`flex items-center gap-2 px-4 py-3 font-semibold text-sm transition-all border-b-2 -mb-px ${tab === id ? 'border-cyan-400 text-cyan-400' : 'border-transparent text-slate-500 hover:text-slate-300'}`}
             >
               <Icon className="w-4 h-4" /> {label}
             </button>
@@ -68,17 +68,17 @@ export default function Admin() {
 
         {tab === 'donations' && (
           <div>
-            <h2 className="text-xl font-black text-gray-900 mb-2">Donations</h2>
-            <p className="text-green-700 font-bold text-lg mb-5">Total Received: ${totalDonations.toLocaleString()}</p>
+            <h2 className="text-xl font-black text-white mb-2">Donations</h2>
+            <p className="text-cyan-400 font-bold text-lg mb-5">Total Received: ${totalDonations.toLocaleString()}</p>
             <div className="space-y-2">
               {donations.map(d => (
-                <div key={d.id} className="bg-white rounded-xl p-4 shadow-sm ring-1 ring-gray-100 flex justify-between items-center gap-4 flex-wrap">
+                <div key={d.id} className="bg-slate-800/40 backdrop-blur-md rounded-xl p-4 ring-1 ring-cyan-500/20 flex justify-between items-center gap-4 flex-wrap">
                   <div>
-                    <span className="font-bold text-gray-800">{d.anonymous ? 'Anonymous Donor' : d.donor_name}</span>
-                    {!d.anonymous && <span className="text-sm text-gray-500 ml-2">{d.donor_email}</span>}
-                    <div className="text-xs text-gray-400 mt-0.5">{d.purpose?.replace('_', ' ')} {d.message && `• "${d.message}"`}</div>
+                    <span className="font-bold text-white">{d.anonymous ? 'Anonymous Donor' : d.donor_name}</span>
+                    {!d.anonymous && <span className="text-sm text-slate-400 ml-2">{d.donor_email}</span>}
+                    <div className="text-xs text-slate-500 mt-0.5">{d.purpose?.replace('_', ' ')} {d.message && `• "${d.message}"`}</div>
                   </div>
-                  <span className="text-xl font-black text-green-700">${d.amount?.toLocaleString()}</span>
+                  <span className="text-xl font-black text-cyan-400">${d.amount?.toLocaleString()}</span>
                 </div>
               ))}
             </div>
