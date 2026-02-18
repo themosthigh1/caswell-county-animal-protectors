@@ -52,7 +52,7 @@ export default function Donate() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-900">
       <div
         className="relative py-20 px-4 text-white"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}

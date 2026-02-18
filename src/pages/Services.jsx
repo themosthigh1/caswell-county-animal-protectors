@@ -57,7 +57,7 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-900">
       {/* Hero */}
       <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-16 px-4 border-b border-cyan-500/20">
         <div className="max-w-5xl mx-auto text-center">

@@ -31,7 +31,7 @@ export default function Admin() {
   const totalDonations = donations.reduce((s, d) => s + (d.amount || 0), 0);
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-900">
       <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white px-6 py-8 border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-black">Admin Dashboard</h1>

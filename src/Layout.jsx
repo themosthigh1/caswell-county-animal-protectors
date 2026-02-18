@@ -40,7 +40,7 @@ export default function Layout({ children, currentPageName }) {
     : NAV_LINKS;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950">
+    <div className="min-h-screen flex flex-col bg-slate-900">
       {/* Top Info Bar */}
       <div className="bg-slate-900/50 backdrop-blur-md text-white text-xs py-3 px-4 hidden sm:block border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4 flex-wrap">
