@@ -5,10 +5,13 @@ import { PawPrint, Search, MessageSquare, Heart } from 'lucide-react';
 import PetListingsTab from '../components/admin/PetListingsTab';
 import MessagesTab from '../components/admin/MessagesTab';
 import LostFoundTab from '../components/admin/LostFoundTab';
+import EventsTab from '../components/admin/EventsTab';
+import { Calendar } from 'lucide-react';
 
 const TABS = [
   { id: 'pets', label: 'Pet Listings', icon: PawPrint },
   { id: 'messages', label: 'Messages', icon: MessageSquare },
+  { id: 'events', label: 'Events', icon: Calendar },
   { id: 'donations', label: 'Donations', icon: Heart },
   { id: 'lostfound', label: 'Lost & Found', icon: Search },
 ];
@@ -64,6 +67,7 @@ export default function Admin() {
 
         {tab === 'pets' && <PetListingsTab />}
         {tab === 'messages' && <MessagesTab />}
+        {tab === 'events' && <EventsTab />}
         {tab === 'lostfound' && <LostFoundTab />}
 
         {tab === 'donations' && (
