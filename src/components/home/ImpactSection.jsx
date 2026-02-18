@@ -38,7 +38,7 @@ const CARDS = [
 
 export default function ImpactSection() {
   return (
-    <section className="py-20 bg-slate-950">
+    <section className="py-20 bg-slate-700/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-black text-white mb-3">How We Help</h2>
@@ -48,7 +48,7 @@ export default function ImpactSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {CARDS.map(({ icon: Icon, color, ring, title, body, cta, page, ctaClass }) => (
-            <div key={title} className={`rounded-2xl p-8 ring-1 ${ring} bg-slate-800/40 backdrop-blur-md shadow-sm hover:ring-opacity-60 transition-all hover:bg-slate-800/60`}>
+            <div key={title} className={`rounded-2xl p-8 ring-1 ${ring} bg-slate-700/30 backdrop-blur-md shadow-sm hover:ring-opacity-60 transition-all hover:bg-slate-700/40`}>
               <div className={`w-14 h-14 rounded-2xl ${color} flex items-center justify-center mb-5 text-white`}>
                 <Icon className="w-7 h-7" />
               </div>
