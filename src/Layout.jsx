@@ -4,6 +4,7 @@ import { createPageUrl } from './utils';
 import { Phone, MapPin, Clock, Menu, X, Heart, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
   { label: 'Home', page: 'Home' },
@@ -42,7 +43,11 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Top Info Bar */}
-      <div className="bg-white/90 backdrop-blur-md text-gray-800 text-sm py-3 px-4 hidden sm:block border-b border-cyan-200 font-medium">
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="bg-white/90 backdrop-blur-md text-gray-800 text-sm py-3 px-4 hidden sm:block border-b border-cyan-200 font-medium"
+      >
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4 flex-wrap">
           <div className="flex items-center gap-5">
             <a href="tel:3366944921" className="flex items-center gap-1.5 hover:text-cyan-700 transition-colors font-semibold">
@@ -58,16 +63,25 @@ export default function Layout({ children, currentPageName }) {
             Mon/Tue/Thu/Fri: 12–4pm &bull; Sat: 10am–2pm &bull; Wed & Sun: Closed
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Navigation */}
-      <nav className={`sticky top-0 z-50 transition-all backdrop-blur-md ${scrolled ? 'bg-white/90 border-b border-cyan-200' : 'bg-white/70 border-b border-cyan-100'}`}>
+      <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        className={`sticky top-0 z-50 transition-all backdrop-blur-md ${scrolled ? 'bg-white/90 border-b border-cyan-200 shadow-sm' : 'bg-white/70 border-b border-cyan-100'}`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <Link to={createPageUrl('Home')} className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 group-hover:shadow-lg group-hover:shadow-cyan-300/50 rounded-xl flex items-center justify-center transition-all">
+              <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 group-hover:shadow-lg group-hover:shadow-cyan-300/50 rounded-xl flex items-center justify-center transition-all"
+              >
                 <PawPrint className="w-5 h-5 text-white" />
-              </div>
+              </motion.div>
               <div className="leading-tight">
                 <div className="text-sm font-black text-gray-900">Animal Protection Society</div>
                 <div className="text-xs text-gray-700 font-semibold">Caswell County, NC</div>
@@ -75,68 +89,106 @@ export default function Layout({ children, currentPageName }) {
             </Link>
 
             <div className="hidden md:flex items-center gap-1">
-              {allLinks.map(link => (
-                <Link
+              {allLinks.map((link, index) => (
+                <motion.div
                   key={link.page}
-                  to={createPageUrl(link.page)}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                    currentPageName === link.page
-                      ? 'bg-cyan-100 text-cyan-800 font-bold'
-                      : 'text-gray-700 hover:text-cyan-700 hover:bg-cyan-50 font-medium'
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    to={createPageUrl(link.page)}
+                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                      currentPageName === link.page
+                        ? 'bg-cyan-100 text-cyan-800 font-bold'
+                        : 'text-gray-700 hover:text-cyan-700 hover:bg-cyan-50 font-medium'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                <Link
+                  to={createPageUrl('Donate')}
+                  className={`ml-2 flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
+                    currentPageName === 'Donate'
+                      ? 'bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white shadow-lg shadow-fuchsia-300/50'
+                      : 'bg-gradient-to-r from-fuchsia-400 to-pink-400 hover:shadow-lg hover:shadow-fuchsia-300/50 text-white'
                   }`}
                 >
-                  {link.label}
+                  <Heart className="w-4 h-4" /> Donate
                 </Link>
-              ))}
-              <Link
-                to={createPageUrl('Donate')}
-                className={`ml-2 flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
-                  currentPageName === 'Donate'
-                    ? 'bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white shadow-lg shadow-fuchsia-300/50'
-                    : 'bg-gradient-to-r from-fuchsia-400 to-pink-400 hover:shadow-lg hover:shadow-fuchsia-300/50 text-white'
-                }`}
-              >
-                <Heart className="w-4 h-4" /> Donate
-              </Link>
+              </motion.div>
             </div>
 
-            <button
+            <motion.button
+              whileTap={{ scale: 0.9 }}
               className="md:hidden p-2 rounded-lg hover:bg-cyan-100 text-cyan-600 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            </motion.button>
           </div>
         </div>
 
-        {mobileOpen && (
-          <div className="md:hidden border-t border-cyan-200 bg-white/80 backdrop-blur-md px-4 pt-3 pb-5 space-y-1">
-            {allLinks.map(link => (
-              <Link
-                key={link.page}
-                to={createPageUrl(link.page)}
-                className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  currentPageName === link.page ? 'bg-cyan-100 text-cyan-800 font-semibold' : 'text-gray-700 hover:bg-cyan-50 font-medium'
-                }`}
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to={createPageUrl('Donate')}
-              className="block mt-2 text-center bg-gradient-to-r from-fuchsia-400 to-pink-400 hover:shadow-lg hover:shadow-fuchsia-300/50 text-white font-bold px-4 py-3 rounded-full transition-all"
-              onClick={() => setMobileOpen(false)}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden border-t border-cyan-200 bg-white/80 backdrop-blur-md px-4 pt-3 pb-5 space-y-1"
             >
-              ❤️ Donate Now
-            </Link>
-            <div className="pt-3 border-t border-cyan-200 text-xs text-gray-600 space-y-1 px-1">
-              <div className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> (336) 694-4921</div>
-              <div className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> Mon/Tue/Thu/Fri: 12–4pm • Sat: 10am–2pm</div>
-            </div>
-          </div>
-        )}
-      </nav>
+              {allLinks.map((link, index) => (
+                <motion.div
+                  key={link.page}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    to={createPageUrl(link.page)}
+                    className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                      currentPageName === link.page ? 'bg-cyan-100 text-cyan-800 font-semibold' : 'text-gray-700 hover:bg-cyan-50 font-medium'
+                    }`}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Link
+                  to={createPageUrl('Donate')}
+                  className="block mt-2 text-center bg-gradient-to-r from-fuchsia-400 to-pink-400 hover:shadow-lg hover:shadow-fuchsia-300/50 text-white font-bold px-4 py-3 rounded-full transition-all"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  ❤️ Donate Now
+                </Link>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="pt-3 border-t border-cyan-200 text-xs text-gray-600 space-y-1 px-1"
+              >
+                <div className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> (336) 694-4921</div>
+                <div className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> Mon/Tue/Thu/Fri: 12–4pm • Sat: 10am–2pm</div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
 
       <main className="flex-1">{children}</main>
 
