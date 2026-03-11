@@ -17,7 +17,7 @@ export default function StatsBanner() {
           <div key={label} className="text-center group">
               <Icon className={`w-8 h-8 mx-auto mb-2 ${color} opacity-80 group-hover:opacity-100 transition-opacity`} />
               <div className={`text-3xl font-black ${color}`}>{value}</div>
-              <div className="text-slate-50 mt-1 text-xs font-medium">{label}</div>
+              <div className="text-gray-600 mt-1 text-xs font-medium">{label}</div>
             </div>
           )}
         </div>
