@@ -94,7 +94,7 @@ export default function Services() {
       </section>
 
       {/* Contact / Schedule */}
-      <section className="py-20 px-4 bg-slate-700/20 backdrop-blur-md border-t border-cyan-500/20">
+      <section className="py-20 px-4 bg-white border-t border-gray-200">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -147,7 +147,7 @@ export default function Services() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-cyan-50 backdrop-blur-md border-t border-cyan-200">
+      <section className="py-20 px-4 bg-gray-50 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-black text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-3">
