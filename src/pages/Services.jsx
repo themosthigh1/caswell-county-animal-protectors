@@ -57,9 +57,9 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-16 px-4 border-b border-cyan-500/20">
+      <div className="bg-gradient-to-r from-cyan-600 to-blue-700 text-white py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <Stethoscope className="w-10 h-10 mx-auto mb-3 text-cyan-400" />
           <h1 className="text-5xl font-black mb-4">Our Services</h1>
