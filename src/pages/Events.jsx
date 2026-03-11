@@ -52,7 +52,7 @@ export default function Events() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
               view === 'calendar'
                 ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-500/50'
-                : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 border border-slate-700/50'
+                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
             }`}
           >
             <Calendar className="w-4 h-4" /> Calendar
@@ -62,7 +62,7 @@ export default function Events() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
               view === 'list'
                 ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-500/50'
-                : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 border border-slate-700/50'
+                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
             }`}
           >
             <List className="w-4 h-4" /> List
