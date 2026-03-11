@@ -30,9 +30,9 @@ export default function Events() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-16 px-4 border-b border-cyan-500/20">
+      <div className="bg-gradient-to-r from-cyan-600 to-blue-700 text-white py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 text-white text-sm font-black mb-3">
             <Calendar className="w-4 h-4" /> UPCOMING EVENTS

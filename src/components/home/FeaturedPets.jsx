@@ -36,7 +36,7 @@ export default function FeaturedPets() {
   const loading = isLoading || pets.length === 0 && loadingAll;
 
   return (
-    <section className="bg-gray-400 py-20">
+    <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
