@@ -46,15 +46,15 @@ export default function FeaturedPets() {
           className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
 
           <div>
-            <div className="flex items-center gap-2 text-cyan-400 font-semibold text-sm mb-2">
+            <div className="flex items-center gap-2 text-cyan-600 font-semibold text-sm mb-2">
               <PawPrint className="w-4 h-4" /> FIND YOUR MATCH
             </div>
-            <h2 className="text-4xl font-black text-white">Meet Our Animals</h2>
-            <p className="text-slate-300 mt-2 text-lg">Every one of them is waiting for someone just like you.</p>
+            <h2 className="text-4xl font-black text-gray-900">Meet Our Animals</h2>
+            <p className="text-gray-600 mt-2 text-lg">Every one of them is waiting for someone just like you.</p>
           </div>
           <Link
             to={createPageUrl('Adopt')}
-            className="inline-flex items-center gap-2 text-cyan-400 font-bold hover:text-cyan-300 transition-colors group whitespace-nowrap">
+            className="inline-flex items-center gap-2 text-cyan-600 font-bold hover:text-cyan-700 transition-colors group whitespace-nowrap">
 
             View All Animals <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -100,7 +100,7 @@ export default function FeaturedPets() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center py-20 text-slate-500">
+          className="text-center py-20 text-gray-400">
 
             <PawPrint className="w-12 h-12 mx-auto mb-3 opacity-30" />
             <p>Check back soon — new animals arrive frequently!</p>
