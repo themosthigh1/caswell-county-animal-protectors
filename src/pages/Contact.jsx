@@ -106,17 +106,17 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Your Name *</label>
-                    <input required value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} placeholder="Jane Doe" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                    <input required value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} placeholder="Jane Doe" className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
-                    <input required type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="jane@example.com" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                    <input required type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="jane@example.com" className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Phone (optional)</label>
-                    <input value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="(336) 555-0000" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                    <input value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="(336) 555-0000" className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Inquiry Type</label>
@@ -127,11 +127,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Subject</label>
-                  <input value={form.subject} onChange={e => setForm(p => ({ ...p, subject: e.target.value }))} placeholder="What is this about?" className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-slate-500" />
+                  <input value={form.subject} onChange={e => setForm(p => ({ ...p, subject: e.target.value }))} placeholder="What is this about?" className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Message *</label>
-                  <textarea required value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} placeholder="Tell us how we can help you..." rows={5} className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none placeholder-slate-500" />
+                  <textarea required value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} placeholder="Tell us how we can help you..." rows={5} className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none placeholder-gray-400" />
                 </div>
                 <button type="submit" disabled={mutation.isPending} className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:shadow-lg hover:shadow-cyan-500/50 disabled:opacity-60 text-white font-bold py-3.5 rounded-full transition-colors text-base">
                   {mutation.isPending ? 'Sending…' : 'Send Message'}
