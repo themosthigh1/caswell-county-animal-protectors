@@ -2,10 +2,10 @@ import React from 'react';
 import { PawPrint, Heart, Home, Users } from 'lucide-react';
 
 const STATS = [
-{ icon: PawPrint, label: 'Animals in Our Care', value: '50+', color: 'text-cyan-400' },
-{ icon: Heart, label: 'Adoptions This Year', value: '200+', color: 'text-fuchsia-400' },
-{ icon: Home, label: 'Forever Homes Found', value: '1,000+', color: 'text-blue-400' },
-{ icon: Users, label: 'Community Volunteers', value: '75+', color: 'text-pink-400' }];
+{ icon: PawPrint, label: 'Animals in Our Care', value: '50+', color: 'text-cyan-600' },
+{ icon: Heart, label: 'Adoptions This Year', value: '200+', color: 'text-fuchsia-600' },
+{ icon: Home, label: 'Forever Homes Found', value: '1,000+', color: 'text-blue-600' },
+{ icon: Users, label: 'Community Volunteers', value: '75+', color: 'text-pink-600' }];
 
 
 export default function StatsBanner() {
