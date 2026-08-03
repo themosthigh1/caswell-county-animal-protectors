@@ -1,0 +1,77 @@
+{
+  "name": "LostFoundReport",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "lost",
+        "found"
+      ]
+    },
+    "pet_name": {
+      "type": "string"
+    },
+    "species": {
+      "type": "string",
+      "enum": [
+        "dog",
+        "cat",
+        "rabbit",
+        "bird",
+        "other",
+        "unknown"
+      ]
+    },
+    "breed": {
+      "type": "string"
+    },
+    "age_description": {
+      "type": "string"
+    },
+    "color_markings": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "date_occurred": {
+      "type": "string",
+      "format": "date"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "contact_phone": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "resolved"
+      ],
+      "default": "active"
+    },
+    "collar_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "species",
+    "location",
+    "date_occurred",
+    "contact_name",
+    "contact_phone"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Donation",
+  "type": "object",
+  "properties": {
+    "donor_name": {
+      "type": "string"
+    },
+    "donor_email": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "general",
+        "medical",
+        "spay_neuter",
+        "emergency",
+        "food_supplies"
+      ],
+      "default": "general"
+    },
+    "message": {
+      "type": "string"
+    },
+    "anonymous": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "received",
+        "processed"
+      ],
+      "default": "received"
+    }
+  },
+  "required": [
+    "donor_name",
+    "donor_email",
+    "amount"
+  ]
+}

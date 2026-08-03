@@ -1,0 +1,117 @@
+{
+  "name": "Pet",
+  "type": "object",
+  "properties": {
+    "pet_id": {
+      "type": "string",
+      "description": "Unique shelter ID for this pet (e.g. 26-0051)"
+    },
+    "name": {
+      "type": "string"
+    },
+    "species": {
+      "type": "string",
+      "enum": [
+        "dog",
+        "cat",
+        "rabbit",
+        "bird",
+        "other"
+      ]
+    },
+    "breed": {
+      "type": "string"
+    },
+    "age_years": {
+      "type": "number"
+    },
+    "age_months": {
+      "type": "number"
+    },
+    "sex": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "size": {
+      "type": "string",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "extra_large"
+      ]
+    },
+    "color": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "temperament": {
+      "type": "string"
+    },
+    "good_with_kids": {
+      "type": "boolean"
+    },
+    "good_with_dogs": {
+      "type": "boolean"
+    },
+    "good_with_cats": {
+      "type": "boolean"
+    },
+    "vaccinated": {
+      "type": "boolean"
+    },
+    "spayed_neutered": {
+      "type": "boolean"
+    },
+    "microchipped": {
+      "type": "boolean"
+    },
+    "special_needs": {
+      "type": "boolean"
+    },
+    "special_needs_description": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "photo_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional photos of the pet"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "pending",
+        "adopted",
+        "foster"
+      ],
+      "default": "available"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "intake_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "adoption_fee": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "species",
+    "sex"
+  ]
+}

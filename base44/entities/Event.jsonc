@@ -1,0 +1,65 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed event description"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "adoption_drive",
+        "fundraiser",
+        "vaccination_clinic",
+        "training",
+        "other"
+      ],
+      "description": "Type of event"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event start date and time"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event end date and time"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location/address"
+    },
+    "max_attendees": {
+      "type": "number",
+      "description": "Maximum number of attendees"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "ongoing",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled",
+      "description": "Current status"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Featured on homepage"
+    }
+  },
+  "required": [
+    "title",
+    "event_type",
+    "start_date",
+    "location"
+  ]
+}
