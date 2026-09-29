@@ -194,9 +194,9 @@ export default function Layout({ children, currentPageName }) {
 
       {/* Footer */}
       <footer className="bg-gray-100 backdrop-blur-md border-t border-cyan-200 text-gray-900">
-        <div className="max-w-7xl mx-auto px-4 py-14">
+        <div className="max-w-7xl mx-auto px-4 py-14 bg-[hsl(var(--accent))]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
+            <div className="bg-[hsl(var(--destructive-foreground))]">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
                   <PawPrint className="w-5 h-5 text-white" />
