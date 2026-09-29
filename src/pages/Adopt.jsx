@@ -15,10 +15,10 @@ export default function Adopt() {
 
   const { data: pets = [], isLoading } = useQuery({
     queryKey: ['pets-adopt'],
-    queryFn: () => base44.entities.Pet.filter({ status: 'available' }, '-created_date', 100),
+    queryFn: () => base44.entities.Pet.filter({ status: 'available' }, '-created_date', 100)
   });
 
-  const filtered = pets.filter(p => {
+  const filtered = pets.filter((p) => {
     const matchSpecies = species === 'all' || p.species === species;
     const matchSize = size === 'all' || p.size === size;
     const matchSearch = !search || p.name?.toLowerCase().includes(search.toLowerCase()) || p.breed?.toLowerCase().includes(search.toLowerCase());
@@ -49,58 +49,58 @@ export default function Adopt() {
               type="text"
               placeholder="Search by name or breed…"
               value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-gray-100 border border-cyan-300 text-gray-900 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-500"
-            />
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-9 pr-4 py-2 bg-gray-100 border border-cyan-300 text-gray-900 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-500" />
+            
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <SlidersHorizontal className="w-4 h-4 text-gray-500" />
-            {SPECIES.map(s => (
-              <button
-                key={s}
-                onClick={() => setSpecies(s)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  species === s ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-300/50' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 border border-gray-300'
-                }`}
-              >
+            {SPECIES.map((s) =>
+            <button
+              key={s}
+              onClick={() => setSpecies(s)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              species === s ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-300/50' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 border border-gray-300'}`
+              }>
+              
                 {s === 'all' ? 'All Animals' : s.charAt(0).toUpperCase() + s.slice(1) + 's'}
               </button>
-            ))}
+            )}
           </div>
         </div>
       </div>
 
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(9)].map((_, i) => (
-              <div key={i} className="bg-gray-200 rounded-2xl overflow-hidden animate-pulse backdrop-blur-md">
+        {isLoading ?
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...Array(9)].map((_, i) =>
+          <div key={i} className="bg-gray-200 rounded-2xl overflow-hidden animate-pulse backdrop-blur-md">
                 <div className="h-56 bg-gray-300" />
                 <div className="p-4 space-y-3"><div className="h-5 bg-gray-300 rounded w-1/2" /><div className="h-4 bg-gray-200 rounded w-3/4" /></div>
               </div>
-            ))}
-          </div>
-        ) : filtered.length > 0 ? (
-          <>
+          )}
+          </div> :
+        filtered.length > 0 ?
+        <>
             <p className="text-sm text-gray-700 font-semibold mb-6">{filtered.length} animal{filtered.length !== 1 ? 's' : ''} available</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map(pet => (
-                <PetCard key={pet.id} pet={pet} />
-              ))}
+              {filtered.map((pet) =>
+            <PetCard key={pet.id} pet={pet} />
+            )}
             </div>
-          </>
-        ) : (
-          <div className="text-center py-24 text-gray-700">
+          </> :
+
+        <div className="text-center py-24 text-gray-700">
             <PawPrint className="w-16 h-16 mx-auto mb-4 opacity-40" />
             <h3 className="text-xl font-bold mb-2 text-gray-800">No matches found</h3>
             <p className="font-medium">Try adjusting your filters or check back soon — new animals arrive frequently!</p>
           </div>
-        )}
+        }
       </div>
 
       {/* Adoption Info */}
-      <div className="bg-cyan-50 backdrop-blur-md border-t border-cyan-200 py-16 px-4">
+      <div className="backdrop-blur-md border-t border-cyan-200 py-16 px-4 bg-[hsl(var(--secondary))]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Ready to Adopt?</h2>
           <p className="text-gray-800 mb-6 leading-relaxed max-w-2xl mx-auto font-medium">
@@ -114,6 +114,6 @@ export default function Adopt() {
         </div>
       </div>
 
-    </div>
-  );
+    </div>);
+
 }
