@@ -56,7 +56,7 @@ export default function PetCard({ pet }) {
         <div className="p-4">
           <div className="flex items-start justify-between gap-2 mb-1">
             <motion.h3 
-              className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors"
+              className="text-xl font-bold text-gray-900 group-hover:text-cyan-700 transition-colors"
               whileHover={{ scale: 1.02 }}
             >
               {pet.name}
@@ -68,17 +68,17 @@ export default function PetCard({ pet }) {
               <Heart className="w-5 h-5 text-slate-500 group-hover:text-fuchsia-400 transition-colors flex-shrink-0 mt-0.5" />
             </motion.div>
           </div>
-          <p className="text-sm text-slate-400 mb-3">
+          <p className="text-sm text-gray-600 mb-3">
             {pet.breed || pet.species?.charAt(0).toUpperCase() + pet.species?.slice(1)} &bull; {age} &bull; {pet.sex}
           </p>
           {pet.description && (
-            <p className="text-sm text-slate-300 line-clamp-2 leading-relaxed">{pet.description}</p>
+            <p className="text-sm text-gray-700 line-clamp-2 leading-relaxed">{pet.description}</p>
           )}
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {pet.vaccinated && <span className="bg-cyan-500/20 text-cyan-300 text-xs px-2 py-0.5 rounded-full font-medium">Vaccinated</span>}
-            {pet.spayed_neutered && <span className="bg-blue-500/20 text-blue-300 text-xs px-2 py-0.5 rounded-full font-medium">Fixed</span>}
-            {pet.good_with_kids && <span className="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded-full font-medium">Good w/ kids</span>}
-            {pet.special_needs && <span className="bg-fuchsia-500/20 text-fuchsia-300 text-xs px-2 py-0.5 rounded-full font-medium">Special needs</span>}
+            {pet.vaccinated && <span className="bg-cyan-100 text-cyan-900 ring-1 ring-cyan-300 text-xs px-2.5 py-1 rounded-full font-semibold">Vaccinated</span>}
+            {pet.spayed_neutered && <span className="bg-blue-100 text-blue-900 ring-1 ring-blue-300 text-xs px-2.5 py-1 rounded-full font-semibold">Fixed</span>}
+            {pet.good_with_kids && <span className="bg-amber-100 text-amber-900 ring-1 ring-amber-300 text-xs px-2.5 py-1 rounded-full font-semibold">Good w/ kids</span>}
+            {pet.special_needs && <span className="bg-fuchsia-100 text-fuchsia-900 ring-1 ring-fuchsia-300 text-xs px-2.5 py-1 rounded-full font-semibold">Special needs</span>}
           </div>
         </div>
       </Link>
