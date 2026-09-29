@@ -41,7 +41,7 @@ export default function Adopt() {
       </div>
 
       {/* Filters */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-cyan-200 shadow-sm sticky top-16 z-30">
+      <div className="bg-gray-800 border-b border-gray-700 shadow-sm sticky top-16 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap gap-3 items-center">
           <div className="relative flex-1 min-w-48">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
@@ -50,17 +50,17 @@ export default function Adopt() {
               placeholder="Search by name or breed…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-gray-100 border border-cyan-300 text-gray-900 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-500" />
+              className="w-full pl-9 pr-4 py-2 bg-white border border-gray-600 text-gray-900 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-500" />
             
           </div>
           <div className="flex items-center gap-2 flex-wrap">
-            <SlidersHorizontal className="w-4 h-4 text-gray-500" />
+            <SlidersHorizontal className="w-4 h-4 text-gray-300" />
             {SPECIES.map((s) =>
             <button
               key={s}
               onClick={() => setSpecies(s)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-              species === s ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-300/50' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 border border-gray-300'}`
+              species === s ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-300/50' : 'bg-gray-700 text-gray-100 hover:bg-gray-600 border border-gray-600'}`
               }>
               
                 {s === 'all' ? 'All Animals' : s.charAt(0).toUpperCase() + s.slice(1) + 's'}
