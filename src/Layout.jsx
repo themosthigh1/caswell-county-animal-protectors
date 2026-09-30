@@ -254,6 +254,7 @@ export default function Layout({ children, currentPageName }) {
           <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-700 font-medium">
             <span>© 2024 Animal Protection Society of Caswell County. All rights reserved.</span>
             <span>Made with ❤️ for the animals of Caswell County</span>
+            <span>Designed by <a href="https://crownlinecreative.online" target="_blank" rel="noopener noreferrer" className="text-cyan-700 font-semibold hover:underline">Crownline Creative</a></span>
           </div>
         </div>
       </footer>
